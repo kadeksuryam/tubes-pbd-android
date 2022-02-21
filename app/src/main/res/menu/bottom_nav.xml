@@ -5,7 +5,7 @@
 		android:icon="@drawable/ic_baseline_newspaper_24"
 		android:title="@string/berita_menu" />
 	<item
-		android:id="@id/faskesSearch"
+		android:id="@id/faskes"
 		android:icon="@drawable/ic_baseline_local_hospital_24"
 		android:title="@string/faskes_menu" />
 	<item

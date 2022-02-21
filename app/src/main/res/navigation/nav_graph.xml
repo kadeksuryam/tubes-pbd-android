@@ -11,10 +11,10 @@
 		android:label="fragment_berita"
 		tools:layout="@layout/fragment_berita" />
 	<fragment
-		android:id="@+id/faskesSearch"
-		android:name="com.if3230.perludilindungi.FaskesSearch"
-		android:label="fragment_faskes_search"
-		tools:layout="@layout/fragment_faskes_search" />
+		android:id="@+id/faskes"
+		android:name="com.if3230.perludilindungi.Faskes"
+		android:label="fragment_faskes"
+		tools:layout="@layout/fragment_faskes" />
 	<fragment
 		android:id="@+id/bookmarks"
 		android:name="com.if3230.perludilindungi.Bookmarks"
