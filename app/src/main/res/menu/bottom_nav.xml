@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:id="@id/berita"
+		android:icon="@drawable/ic_baseline_newspaper_24"
+		android:title="@string/berita_menu" />
+	<item
+		android:id="@id/faskesSearch"
+		android:icon="@drawable/ic_baseline_local_hospital_24"
+		android:title="@string/faskes_menu" />
+	<item
+		android:id="@id/bookmarks"
+		android:icon="@drawable/ic_baseline_bookmarks_24"
+		android:title="@string/bookmarks_menu" />
+	<item
+		android:id="@id/checkIn"
+		android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+		android:title="@string/check_in_menu" />
+</menu>

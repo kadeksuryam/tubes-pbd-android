@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_graph"
+	app:startDestination="@id/berita">
+
+	<fragment
+		android:id="@+id/berita"
+		android:name="com.if3230.perludilindungi.Berita"
+		android:label="fragment_berita"
+		tools:layout="@layout/fragment_berita" />
+	<fragment
+		android:id="@+id/faskesSearch"
+		android:name="com.if3230.perludilindungi.FaskesSearch"
+		android:label="fragment_faskes_search"
+		tools:layout="@layout/fragment_faskes_search" />
+	<fragment
+		android:id="@+id/bookmarks"
+		android:name="com.if3230.perludilindungi.Bookmarks"
+		android:label="fragment_bookmarks"
+		tools:layout="@layout/fragment_bookmarks" />
+	<activity
+		android:id="@+id/mainActivity"
+		android:name="com.if3230.perludilindungi.MainActivity"
+		android:label="activity_main"
+		tools:layout="@layout/activity_main" />
+	<fragment
+		android:id="@+id/checkIn"
+		android:name="com.if3230.perludilindungi.CheckIn"
+		android:label="fragment_check_in"
+		tools:layout="@layout/fragment_check_in" />
+</navigation>
