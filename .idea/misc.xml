@@ -3,27 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.1765625" />
-        <entry key="app/src/main/res/drawable/asd.xml" value="0.221" />
-        <entry key="app/src/main/res/drawable/ic_baseline_local_hospital_24.xml" value="0.3175" />
-        <entry key="app/src/main/res/drawable/ic_baseline_newspaper_24.xml" value="0.3175" />
-        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.221" />
-        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.221" />
-        <entry key="app/src/main/res/font/material3.xml" value="0.3828125" />
-        <entry key="app/src/main/res/layout/activity_content.xml" value="0.33" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1925" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/drawable/rectangle_2.xml" value="0.1775" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/drawable/top_app_bar.xml" value="0.1775" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/activity_check_in.xml" value="0.22" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/activity_check_in2.xml" value="0.14" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/activity_content.xml" value="0.16875" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/activity_main.xml" value="0.11" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/fragment_berita.xml" value="0.25" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/fragment_bookmarks.xml" value="0.16875" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/fragment_check_in.xml" value="0.16875" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/layout/fragment_faskes.xml" value="0.16875" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/menu/bottom_nav.xml" value="0.184375" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/menu/top_app_bar.xml" value="0.184375" />
+        <entry key="..\:/Users/kadeksuryam/Documents/if3210-2022-android-40/app/src/main/res/menu/top_app_bar_checkin.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.17147922998986828" />
-        <entry key="app/src/main/res/layout/activity_news_page.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/bottm_navigation_menu.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_berita.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_bookmarks.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_check_in.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_faskes.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_faskes_search.xml" value="0.3500905797101449" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17572463768115942" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.17572463768115942" />
-        <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.35260416666666666" />
       </map>
     </option>
   </component>
