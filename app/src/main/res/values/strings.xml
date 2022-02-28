@@ -9,4 +9,8 @@
     <string name="bookmarks_menu">Bookmark</string>
     <string name="check_in_menu">Check-in</string>
     <string name="page_title_check_in">Check-in</string>
+	<string name="title_berita_fragment">Berita Covid-19</string>
+	<string name="title_faskes_search_fragment">Fasilitas Kesehatan</string>
+	<string name="title_bookmarks_fragment">Bookmarks Faskes</string>
+	<string name="title_check_in_fragment">Check-in</string>
 </resources>
