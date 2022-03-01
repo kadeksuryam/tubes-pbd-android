@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.widget.ActivityChooserView
 import androidx.core.view.setPadding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
@@ -43,15 +42,17 @@ class Berita : Fragment() {
 		if (linearLayout != null) {
 			linearLayout!!.gravity = Gravity.CENTER
 
-			for (_i in 0..3) {
+			for (_i in 0..30) {
 				val card = MaterialCardView(act)
 				val cardParams = LinearLayout.LayoutParams(
 					pxToDp(360),
 					LinearLayout.LayoutParams.WRAP_CONTENT
 				)
-				cardParams.setMargins(0, pxToDp(14), 0, 0)
+				cardParams.setMargins(0, pxToDp(7), 0, pxToDp(7))
 				card.layoutParams = cardParams
 				card.setPadding(10, 0, 10, 0)
+				card.strokeWidth = 0
+				card.elevation = pxToDp(5).toFloat()
 
 				val containerAll = LinearLayout(act)
 				containerAll.layoutParams = ViewGroup.LayoutParams(
