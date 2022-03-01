@@ -8,4 +8,5 @@
 	<string name="faskes_menu">Faskes</string>
 	<string name="bookmarks_menu">Bookmark</string>
 	<string name="check_in_menu">Check-in</string>
+	<string name="default_berita_content_description">Cover Berita</string>
 </resources>
