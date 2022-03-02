@@ -55,6 +55,11 @@
 	<color name="md_theme_dark_inversePrimary">#006493</color>
 	<color name="md_theme_dark_shadow">#000000</color>
 	<color name="md_theme_dark_primaryInverse">#006493</color>
+	<color name="md_theme_dark_primaryInverse2">#E0FFFF</color>
 	<color name="seed">#006491</color>
 	<color name="error">#BA1B1B</color>
+	<color name="check_in_green">#05944F</color>
+	<color name="check_in_red">#DD3730</color>
+	<color name="check_in_yellow">#FAB005</color>
+	<color name="check_in_black">#000000</color>
 </resources>

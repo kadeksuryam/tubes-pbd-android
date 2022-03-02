@@ -18,7 +18,7 @@ interface PerduliLindungiAPI {
         fun getInstance(): PerduliLindungiAPI {
             if (perduliLindungiAPI == null) {
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("https://virtserver.swaggerhub.com/labpro/PerluDilindungi/1.0.0/")
+                    .baseUrl("https://perludilindungi.herokuapp.com/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
