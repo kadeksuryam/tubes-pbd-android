@@ -1,7 +1,5 @@
 package com.if3230.perludilindungi.Model
 
-import java.time.LocalDate
-
 data class NewsDescription(val __cdata: String)
 data class NewsEnclosure(val _url: String, val _length: Long, val _type: String)
 data class News(

@@ -4,10 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.if3230.perludilindungi.Model.News
 import com.if3230.perludilindungi.databinding.ItemNewsBinding
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
-class RecyclerViewNewsAdapter() : RecyclerView.Adapter<RecyclerViewNewsAdapter.NewsViewHolder>() {
+class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.NewsViewHolder>() {
 	private var _newsList = mutableListOf<News>()
 	var newsList
 		get() = _newsList
@@ -24,17 +27,39 @@ class RecyclerViewNewsAdapter() : RecyclerView.Adapter<RecyclerViewNewsAdapter.N
 
 	override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 		val item = _newsList[position]
-		holder.binding.tvName.text = item.title
-		holder.binding.tvPrice.text = item.pubDate
+		holder.binding.itemNewsTitle.text = item.title
+		val date =
+			ZonedDateTime.parse(item.pubDate, DateTimeFormatter.ofPattern("E, d MMM y H:m:s Z"))
+		val dateStr = "${date.dayOfMonth} ${date.month} ${date.year} ${date.hour}.${date.minute} ${
+			parseTzId(date.zone.toString())
+		}"
+		holder.binding.itemNewsSubtitle.text = dateStr
+		holder.binding.itemNewsImg.contentDescription =
+			holder.binding.root.resources.getString(R.string.default_berita_content_description)
+		if (item.enclosure._type.startsWith("image")) {
+			Glide.with(holder.itemView.context).load(item.enclosure._url)
+				.into(holder.binding.itemNewsImg)
+		}
 	}
 
 	override fun getItemCount() = newsList.size
 
-	inner class NewsViewHolder (val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+	inner class NewsViewHolder(val binding: ItemNewsBinding) :
+		RecyclerView.ViewHolder(binding.root) {
 		init {
 			binding.root.setOnClickListener {
-				Toast.makeText(binding.root.context, binding.tvName.text, Toast.LENGTH_SHORT).show()
+				Toast.makeText(binding.root.context, binding.itemNewsTitle.text, Toast.LENGTH_SHORT)
+					.show()
 			}
+		}
+	}
+
+	private fun parseTzId(tz: String): String {
+		return when (tz) {
+			"+07:00" -> "WIB"
+			"+08:00" -> "WITA"
+			"+09:00" -> "WIT"
+			else -> tz
 		}
 	}
 }
