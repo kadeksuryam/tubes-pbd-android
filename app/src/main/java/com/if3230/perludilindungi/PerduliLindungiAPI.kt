@@ -1,6 +1,5 @@
 package com.if3230.perludilindungi
 
-import android.telecom.Call
 import com.if3230.perludilindungi.Model.CheckInRequest
 import com.if3230.perludilindungi.Model.CheckInResponse
 import retrofit2.Call

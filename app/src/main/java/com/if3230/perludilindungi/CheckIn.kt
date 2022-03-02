@@ -189,7 +189,7 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
     }
 
     private fun loadAmbientTemperature() {
-        val sensor: Sensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
+        val sensor: Sensor? = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
 
         if(sensor != null) {
             sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST)

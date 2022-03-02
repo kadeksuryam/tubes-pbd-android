@@ -9,6 +9,6 @@ enum class UserStatus {
 
 data class CheckInResponseData(val userStatus: UserStatus, val reason: String)
 
-data class CheckInResponse(val success: String, val code: Integer, val message: String, val data: CheckInResponseData)
+data class CheckInResponse(val success: String, val code: Int, val message: String, val data: CheckInResponseData)
 
 
