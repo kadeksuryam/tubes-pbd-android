@@ -50,7 +50,9 @@ class News : Fragment() {
 		binding.newsRecyclerView.setHasFixedSize(true)
 		binding.newsRecyclerView.adapter = adapter
 
-		viewModel.getNews()
+		if (adapter.itemCount == 0) {
+			viewModel.getNews()
+		}
 	}
 
 	override fun onResume() {

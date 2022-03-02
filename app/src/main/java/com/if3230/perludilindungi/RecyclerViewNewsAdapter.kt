@@ -34,8 +34,6 @@ class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.New
 			parseTzId(date.zone.toString())
 		}"
 		holder.binding.itemNewsSubtitle.text = dateStr
-		holder.binding.itemNewsImg.contentDescription =
-			holder.binding.root.resources.getString(R.string.default_berita_content_description)
 		if (item.enclosure._type.startsWith("image")) {
 			Glide.with(holder.itemView.context).load(item.enclosure._url)
 				.into(holder.binding.itemNewsImg)

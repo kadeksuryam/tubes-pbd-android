@@ -4,10 +4,8 @@
 	android:id="@+id/item_news_card"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_marginLeft="10dp"
-	android:layout_marginTop="14dp"
-	android:layout_marginRight="10dp"
-	android:layout_marginBottom="14dp"
+	android:layout_marginHorizontal="14dp"
+	android:layout_marginVertical="7dp"
 	android:clickable="true"
 	android:elevation="25dp"
 	android:focusable="true"
@@ -23,8 +21,8 @@
 		<ImageView
 			android:id="@+id/item_news_img"
 			android:layout_width="match_parent"
-			android:layout_height="100dp"
-			android:contentDescription="@string/app_name"
+			android:layout_height="150dp"
+			android:contentDescription="@string/default_berita_content_description"
 			android:cropToPadding="true"
 			android:scaleType="centerCrop"
 			app:srcCompat="@drawable/ic_baseline_newspaper_24" />
