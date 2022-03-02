@@ -1,7 +1,9 @@
 package com.if3230.perludilindungi
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.if3230.perludilindungi.Model.NewsResponse
 import com.if3230.perludilindungi.Model.CheckInRequest
 import com.if3230.perludilindungi.Model.CheckInResponse
 import retrofit2.Call
@@ -10,6 +12,7 @@ import retrofit2.Response
 
 class MainViewModel constructor(private val repository: MainRepository)  : ViewModel() {
     val checkInStatus = MutableLiveData<CheckInResponse>()
+    val news = MutableLiveData<NewsResponse>()
     val errorMessage = MutableLiveData<String>()
 
     fun doCheckIn(checkInRequest: CheckInRequest) {
@@ -19,6 +22,18 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
                 checkInStatus.postValue(response.body())
             }
             override fun onFailure(call: Call<CheckInResponse>, t: Throwable) {
+                errorMessage.postValue(t.message)
+            }
+        })
+    }
+
+    fun getNews() {
+        val response = repository.getNews()
+	    response.enqueue(object : Callback<NewsResponse> {
+	        override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
+                news.postValue(response.body())
+	        }
+            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 errorMessage.postValue(t.message)
             }
         })

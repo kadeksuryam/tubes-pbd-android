@@ -7,9 +7,9 @@
 
 	<fragment
 		android:id="@+id/berita"
-		android:name="com.if3230.perludilindungi.Berita"
+		android:name="com.if3230.perludilindungi.News"
 		android:label="fragment_berita"
-		tools:layout="@layout/fragment_berita" />
+		tools:layout="@layout/fragment_news" />
 	<fragment
 		android:id="@+id/faskes"
 		android:name="com.if3230.perludilindungi.Faskes"
