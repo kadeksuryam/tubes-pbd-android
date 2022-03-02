@@ -33,6 +33,12 @@ class News : Fragment() {
 		viewModel.errorMessage.observe(this) {
 			Toast.makeText(this.context, it, Toast.LENGTH_SHORT).show()
 		}
+		viewModel.finishLoadingNews.observe(this) {
+			if (it) {
+				binding.newsRecyclerViewProgress.visibility = View.GONE
+				binding.newsRecyclerView.visibility = View.VISIBLE
+			}
+		}
 	}
 
 	override fun onCreateView(

@@ -1,6 +1,5 @@
 package com.if3230.perludilindungi
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.if3230.perludilindungi.Model.NewsResponse
@@ -14,6 +13,7 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
     val checkInStatus = MutableLiveData<CheckInResponse>()
     val news = MutableLiveData<NewsResponse>()
     val errorMessage = MutableLiveData<String>()
+    val finishLoadingNews = MutableLiveData(false)
 
     fun doCheckIn(checkInRequest: CheckInRequest) {
         val response = repository.doCheckIn(checkInRequest)
@@ -32,9 +32,11 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
 	    response.enqueue(object : Callback<NewsResponse> {
 	        override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
                 news.postValue(response.body())
+                finishLoadingNews.postValue(true)
 	        }
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 errorMessage.postValue(t.message)
+                finishLoadingNews.postValue(true)
             }
         })
     }
