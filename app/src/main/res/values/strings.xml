@@ -17,4 +17,15 @@
 	<string name="default_progress_bar">Loading...</string>
 	<string name="check_in_success">Berhasil</string>
 	<string name="check_in_fail">Gagal</string>
+
+	<string-array name="provinsi">
+		<item>Jawa Barat</item>
+		<item>Jawa Tengah</item>
+		<item>Jawa Timur</item>
+	</string-array>
+
+	<string-array name="kota">
+		<item>Bandung</item>
+		<item>Tasikmalaya</item>
+	</string-array>
 </resources>
