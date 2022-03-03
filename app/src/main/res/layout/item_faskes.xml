@@ -1,99 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_faskes"
-    style="bold"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:outlineAmbientShadowColor="@color/cardview_dark_background"
-    app:cardBackgroundColor="#FCFCFF"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="3dp"
-    app:contentPadding="4dp">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/item_faskes"
+	style="bold"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="5dp"
+	android:outlineAmbientShadowColor="@color/cardview_dark_background"
+	app:cardBackgroundColor="#FCFCFF"
+	app:cardCornerRadius="12dp"
+	app:cardElevation="3dp"
+	app:contentPadding="4dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/item_faskes_container_all"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/item_faskes_container_all"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="16dp">
 
-        <TextView
-            android:id="@+id/item_faskes_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/default_faskes_name"
-            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/item_faskes_type"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+		<TextView
+			android:id="@+id/item_faskes_name"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:text="@string/default_faskes_name"
+			android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+			android:textStyle="bold"
+			app:layout_constraintEnd_toStartOf="@+id/item_faskes_type"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/item_faskes_type"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/md_theme_light_tertiaryContainer"
-            android:paddingLeft="6dp"
-            android:paddingTop="2.5dp"
-            android:paddingRight="6dp"
-            android:paddingBottom="2.5dp"
-            android:text="@string/default_faskes_type"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+		<TextView
+			android:id="@+id/item_faskes_type"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:background="@drawable/rounded_corner"
+			android:backgroundTint="@color/md_theme_light_tertiaryContainer"
+			android:paddingLeft="6dp"
+			android:paddingTop="2.5dp"
+			android:paddingRight="6dp"
+			android:paddingBottom="2.5dp"
+			android:text="@string/default_faskes_type"
+			android:textAlignment="center"
+			android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+			android:textStyle="bold"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/item_faskes_address"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/default_faskes_address"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_faskes_name" />
+		<TextView
+			android:id="@+id/item_faskes_address"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:text="@string/default_faskes_address"
+			android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/item_faskes_name" />
 
-        <TextView
-            android:id="@+id/item_faskes_phone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/default_faskes_phone"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/item_faskes_code_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
+		<TextView
+			android:id="@+id/item_faskes_phone"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:text="@string/default_faskes_phone"
+			android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/item_faskes_code_label"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
 
-        <TextView
-            android:id="@+id/item_faskes_code_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="5dp"
-            android:text="@string/item_faskes_kode_label"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/item_faskes_code"
-            app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
+		<TextView
+			android:id="@+id/item_faskes_code_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:layout_marginEnd="5dp"
+			android:text="@string/item_faskes_kode_label"
+			android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/item_faskes_code"
+			app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
 
-        <TextView
-            android:id="@+id/item_faskes_code"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/default_faskes_code"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
+		<TextView
+			android:id="@+id/item_faskes_code"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:text="@string/default_faskes_code"
+			android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -5,12 +5,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.if3230.perludilindungi.databinding.ActivityContentBinding
 
 class Content : AppCompatActivity() {
-	private lateinit var binding: ActivityContentBinding;
+	private lateinit var binding: ActivityContentBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

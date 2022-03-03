@@ -5,12 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.if3230.perludilindungi.Model.*
 import com.if3230.perludilindungi.dao.BookmarkedFaskesDao
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel constructor(private val repository: MainRepository, private val bookmarkedFaskesDao: BookmarkedFaskesDao) : ViewModel() {
+class MainViewModel constructor(
+	private val repository: MainRepository,
+	private val bookmarkedFaskesDao: BookmarkedFaskesDao
+) : ViewModel() {
 	val checkInStatus = MutableLiveData<CheckInResponse>()
 	val news = MutableLiveData<NewsResponse>()
 	val province = MutableLiveData<ProvinceResponse>()
@@ -74,23 +79,23 @@ class MainViewModel constructor(private val repository: MainRepository, private 
 			}
 
 			bookmarks.value = allBookmarks.toMutableList()
-			isBookmarksLoaded.value = true;
+			isBookmarksLoaded.value = true
 		}
 	}
 
 	fun bookmark(faskes: BookmarkedFaskes) {
-		 viewModelScope.launch {
+		viewModelScope.launch {
 			withContext(Dispatchers.IO) {
 				bookmarkedFaskesDao.insert(faskes)
 			}
 
-			 if (!isBookmarksLoaded.value!!) {
-			 	getAllBookmarks()
-			 }
+			if (!isBookmarksLoaded.value!!) {
+				getAllBookmarks()
+			}
 
-			 val bm = bookmarks.value!!
-			 bm.add(faskes)
-			 bookmarks.value = bm
+			val bm = bookmarks.value!!
+			bm.add(faskes)
+			bookmarks.value = bm
 		}
 	}
 

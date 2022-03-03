@@ -1,6 +1,9 @@
 package com.if3230.perludilindungi
 
-import com.if3230.perludilindungi.Model.*
+import com.if3230.perludilindungi.Model.CheckInRequest
+import com.if3230.perludilindungi.Model.CheckInResponse
+import com.if3230.perludilindungi.Model.NewsResponse
+import com.if3230.perludilindungi.Model.ProvinceResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit

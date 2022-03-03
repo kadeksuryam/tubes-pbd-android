@@ -16,6 +16,7 @@ enum class JenisFaskes {
 	FKTP,
 	PUSKESMAS,
 }
+
 enum class StatusFaskes {
 	SIAP_VAKSINASI {
 		override fun toString(): String {
@@ -23,6 +24,7 @@ enum class StatusFaskes {
 		}
 	}
 }
+
 data class DetailFaskes(
 	val id: Int,
 	val kode: String,

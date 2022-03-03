@@ -2,14 +2,11 @@ package com.if3230.perludilindungi.recycler_view
 
 import android.annotation.SuppressLint
 import android.util.Log
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.if3230.perludilindungi.Model.Faskes
-import com.if3230.perludilindungi.Model.JenisFaskes
-import com.if3230.perludilindungi.R
 import com.if3230.perludilindungi.databinding.ItemFaskesBinding
 
 class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {

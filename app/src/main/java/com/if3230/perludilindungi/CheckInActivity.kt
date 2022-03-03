@@ -62,7 +62,10 @@ class CheckInActivity : AppCompatActivity(), SensorEventListener {
 		// setup view-model for check-in http request
 		val dao1 = BookmarkedFaskesDatabase.getInstance(this).bookmarkedFaskesDao()
 		viewModel =
-			ViewModelProvider(this, MainViewModelFactory(MainRepository(perduliLindungiAPI), dao1)).get(
+			ViewModelProvider(
+				this,
+				MainViewModelFactory(MainRepository(perduliLindungiAPI), dao1)
+			).get(
 				MainViewModel::class.java
 			)
 		viewModel.checkInStatus.observe(this) {
