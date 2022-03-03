@@ -3,19 +3,23 @@ package com.if3230.perludilindungi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.if3230.perludilindungi.Model.BookmarkedFaskes
 import com.if3230.perludilindungi.Model.CheckInRequest
 import com.if3230.perludilindungi.Model.CheckInResponse
 import com.if3230.perludilindungi.Model.NewsResponse
+import com.if3230.perludilindungi.dao.BookmarkedFaskesDao
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel constructor(private val repository: MainRepository) : ViewModel() {
+class MainViewModel constructor(private val repository: MainRepository, private val bookmarkedFaskesDao: BookmarkedFaskesDao) : ViewModel() {
 	val checkInStatus = MutableLiveData<CheckInResponse>()
 	val news = MutableLiveData<NewsResponse>()
 	val errorMessage = MutableLiveData<String>()
+	val bookmarks = MutableLiveData<MutableList<BookmarkedFaskes>>()
 	val finishLoadingNews = MutableLiveData(false)
+	val isBookmarksLoaded = MutableLiveData(false)
 
 	fun doCheckIn(checkInRequest: CheckInRequest) {
 		val response = repository.doCheckIn(checkInRequest)
@@ -46,6 +50,49 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
 				errorMessage.value = response.message()
 			}
 			finishLoadingNews.value = true
+		}
+	}
+
+	fun getAllBookmarks() {
+		viewModelScope.launch {
+			val allBookmarks = withContext(Dispatchers.IO) {
+				bookmarkedFaskesDao.getAll()
+			}
+
+			bookmarks.value = allBookmarks.toMutableList()
+			isBookmarksLoaded.value = true;
+		}
+	}
+
+	fun bookmark(faskes: BookmarkedFaskes) {
+		 viewModelScope.launch {
+			withContext(Dispatchers.IO) {
+				bookmarkedFaskesDao.insert(faskes)
+			}
+
+			 if (!isBookmarksLoaded.value!!) {
+			 	getAllBookmarks()
+			 }
+
+			 val bm = bookmarks.value!!
+			 bm.add(faskes)
+			 bookmarks.value = bm
+		}
+	}
+
+	fun unbookmark(faskes: BookmarkedFaskes) {
+		viewModelScope.launch {
+			withContext(Dispatchers.IO) {
+				bookmarkedFaskesDao.delete(faskes)
+			}
+
+			if (!isBookmarksLoaded.value!!) {
+				getAllBookmarks()
+			}
+
+			val bm = bookmarks.value!!
+			bm.remove(faskes)
+			bookmarks.value = bm
 		}
 	}
 }

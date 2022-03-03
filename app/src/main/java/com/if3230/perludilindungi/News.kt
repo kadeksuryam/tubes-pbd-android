@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.appbar.MaterialToolbar
+import com.if3230.perludilindungi.database.BookmarkedFaskesDatabase
 import com.if3230.perludilindungi.databinding.FragmentNewsBinding
 
 /**
@@ -23,8 +24,9 @@ class News : Fragment() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		val dao1 = BookmarkedFaskesDatabase.getInstance(requireContext()).bookmarkedFaskesDao()
 		viewModel =
-			ViewModelProvider(this, MainViewModelFactory(MainRepository(perluDilindungiAPI)))
+			ViewModelProvider(this, MainViewModelFactory(MainRepository(perluDilindungiAPI), dao1))
 				.get(MainViewModel::class.java)
 
 		viewModel.news.observe(this) {

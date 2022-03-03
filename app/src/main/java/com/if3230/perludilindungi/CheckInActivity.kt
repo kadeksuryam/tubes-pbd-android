@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.budiyev.android.codescanner.*
 import com.google.android.gms.location.*
 import com.if3230.perludilindungi.Model.CheckInRequest
+import com.if3230.perludilindungi.database.BookmarkedFaskesDatabase
 import com.if3230.perludilindungi.databinding.ActivityCheckInBinding
 
 private const val PERMISSION_ALL = 1
@@ -59,8 +60,9 @@ class CheckInActivity : AppCompatActivity(), SensorEventListener {
 		sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
 		// setup view-model for check-in http request
+		val dao1 = BookmarkedFaskesDatabase.getInstance(this).bookmarkedFaskesDao()
 		viewModel =
-			ViewModelProvider(this, MainViewModelFactory(MainRepository(perduliLindungiAPI))).get(
+			ViewModelProvider(this, MainViewModelFactory(MainRepository(perduliLindungiAPI), dao1)).get(
 				MainViewModel::class.java
 			)
 		viewModel.checkInStatus.observe(this) {
