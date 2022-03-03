@@ -4,6 +4,7 @@ import com.if3230.perludilindungi.Model.CheckInRequest
 import com.if3230.perludilindungi.Model.CheckInResponse
 import com.if3230.perludilindungi.Model.NewsResponse
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
@@ -15,7 +16,7 @@ interface PerluDilindungiAPI {
 	fun doCheckIn(@Body checkInRequest: CheckInRequest): Call<CheckInResponse>
 
 	@GET("get-news")
-	fun getNews(): Call<NewsResponse>
+	suspend fun getNews(): Response<NewsResponse>
 
 	companion object {
 		var perluDilindungiAPI: PerluDilindungiAPI? = null
