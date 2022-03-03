@@ -12,7 +12,8 @@ import com.if3230.perludilindungi.fragment.NewsWebView
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-class NewsAdapter(private val oldFragment: Fragment) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private val oldFragment: Fragment) :
+	RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 	private var _newsList = mutableListOf<News>()
 	var newsList
 		get() = _newsList
@@ -33,7 +34,9 @@ class NewsAdapter(private val oldFragment: Fragment) : RecyclerView.Adapter<News
 		holder.binding.itemNewsTitle.text = item.title
 		val date =
 			ZonedDateTime.parse(item.pubDate, DateTimeFormatter.ofPattern("E, d MMM y H:m:s Z"))
-		val dateStr = "${date.dayOfMonth} ${date.month} ${date.year} ${date.hour}.${date.minute.toString().padStart(2, '0')} ${
+		val dateStr = "${date.dayOfMonth} ${date.month} ${date.year} ${date.hour}.${
+			date.minute.toString().padStart(2, '0')
+		} ${
 			parseTzId(date.zone.toString())
 		}"
 		holder.binding.itemNewsSubtitle.text = dateStr

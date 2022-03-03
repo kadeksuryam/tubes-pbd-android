@@ -3,18 +3,19 @@ package com.if3230.perludilindungi.fragment
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Base64
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.if3230.perludilindungi.R
 import com.if3230.perludilindungi.databinding.FragmentNewsDetailBinding
 
 // the fragment initialization parameters
-private const val ARG_URL = "https://covid19.go.id/artikel/2022/02/11/angka-kesembuhan-covid-19-terus-meningkat-hingga-4250277-orang"
+private const val ARG_URL =
+	"https://covid19.go.id/artikel/2022/02/11/angka-kesembuhan-covid-19-terus-meningkat-hingga-4250277-orang"
 
 /**
  * A simple [Fragment] subclass.

@@ -42,10 +42,10 @@
 		android:layout_marginStart="0dp"
 		android:layout_marginEnd="0dp"
 		android:background="@color/md_theme_light_surface"
+		app:labelVisibilityMode="labeled"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
-		app:labelVisibilityMode="labeled"
 		app:menu="@menu/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
