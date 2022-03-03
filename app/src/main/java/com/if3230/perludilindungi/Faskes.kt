@@ -1,5 +1,6 @@
 package com.if3230.perludilindungi
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,12 +33,14 @@ class Faskes : Fragment() {
 
 	private lateinit var binding: FragmentFaskesBinding
 
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		arguments?.let {
 			param1 = it.getString(ARG_PARAM1)
 			param2 = it.getString(ARG_PARAM2)
 		}
+
 
 	}
 

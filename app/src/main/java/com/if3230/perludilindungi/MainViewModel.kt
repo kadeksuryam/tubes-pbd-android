@@ -3,9 +3,8 @@ package com.if3230.perludilindungi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.if3230.perludilindungi.Model.CheckInRequest
-import com.if3230.perludilindungi.Model.CheckInResponse
-import com.if3230.perludilindungi.Model.NewsResponse
+import androidx.lifecycle.viewModelScope
+import com.if3230.perludilindungi.Model.*
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,6 +13,8 @@ import retrofit2.Response
 class MainViewModel constructor(private val repository: MainRepository) : ViewModel() {
 	val checkInStatus = MutableLiveData<CheckInResponse>()
 	val news = MutableLiveData<NewsResponse>()
+	val province = MutableLiveData<ProvinceResponse>()
+	val finishLoadingProvince = MutableLiveData(false)
 	val errorMessage = MutableLiveData<String>()
 	val finishLoadingNews = MutableLiveData(false)
 	private var job: Job? = null
@@ -45,6 +46,21 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
 				}
 				finishLoadingNews.postValue(true)
 			}
+		}
+	}
+
+	fun getProvince() {
+		viewModelScope.launch {
+			val response = withContext(Dispatchers.IO){
+				val response = repository.getProvince()
+				response
+			}
+			if(response.isSuccessful){
+				province.value = response.body()
+			}else{
+				errorMessage.value = response.message()
+			}
+			finishLoadingProvince.value = true
 		}
 	}
 

@@ -1,8 +1,6 @@
 package com.if3230.perludilindungi
 
-import com.if3230.perludilindungi.Model.CheckInRequest
-import com.if3230.perludilindungi.Model.CheckInResponse
-import com.if3230.perludilindungi.Model.NewsResponse
+import com.if3230.perludilindungi.Model.*
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -17,6 +15,9 @@ interface PerluDilindungiAPI {
 
 	@GET("get-news")
 	suspend fun getNews(): Response<NewsResponse>
+
+	@GET("get-province")
+	suspend fun getProvince(): Response<ProvinceResponse>
 
 	companion object {
 		var perluDilindungiAPI: PerluDilindungiAPI? = null
