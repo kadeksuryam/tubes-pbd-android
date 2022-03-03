@@ -22,6 +22,8 @@ class MainViewModel constructor(
 	val finishLoadingProvince = MutableLiveData(false)
 	val city = MutableLiveData<CityResponse>()
 	val finishLoadingCity = MutableLiveData(false)
+	val faskes = MutableLiveData<FaskesResponse>()
+	val finishLoadingFaskes = MutableLiveData(false)
 	val errorMessage = MutableLiveData<String>()
 	val bookmarks = MutableLiveData<MutableList<BookmarkedFaskes>>()
 	val finishLoadingNews = MutableLiveData(false)
@@ -70,7 +72,7 @@ class MainViewModel constructor(
 			} else {
 				errorMessage.value = response.message()
 			}
-			finishLoadingCity.value = true
+			finishLoadingProvince.value = true
 		}
 	}
 
@@ -85,7 +87,22 @@ class MainViewModel constructor(
 			}else{
 				errorMessage.value = response.message()
 			}
+			finishLoadingCity.value = true
+		}
+	}
 
+	fun getFaskes() {
+		viewModelScope.launch {
+			val response = withContext(Dispatchers.IO){
+				val response = repository.getFaskes()
+				response
+			}
+			if (response.isSuccessful){
+				faskes.value = response.body()
+			}else{
+				errorMessage.value = response.message()
+			}
+			finishLoadingFaskes.value = true
 		}
 	}
 

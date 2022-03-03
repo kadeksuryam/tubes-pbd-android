@@ -23,6 +23,12 @@ interface PerluDilindungiAPI {
 	@GET("api/get-city")
 	suspend fun getCity(@Query("start_id") start_id: String?): Response<CityResponse>
 
+	@GET("api/get-faskes-vaksinasi")
+	suspend fun getFaskes(
+		@Query("province") province: String?,
+		@Query("city") city: String?
+	): Response<FaskesResponse>
+
 	companion object {
 		var perluDilindungiAPI: PerluDilindungiAPI? = null
 
