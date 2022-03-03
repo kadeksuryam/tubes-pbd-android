@@ -1,9 +1,8 @@
 package com.if3230.perludilindungi
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
@@ -15,7 +14,7 @@ class Content : AppCompatActivity() {
 		setContentView(R.layout.activity_content)
 
 		val topAppBar = findViewById<MaterialToolbar>(R.id.content_top_bar)
-		topAppBar.setNavigationOnClickListener { v ->
+		topAppBar.setNavigationOnClickListener { _ ->
 			// TODO: Finish the listener
 			Toast.makeText(applicationContext, "navigation icon pressed", Toast.LENGTH_SHORT).show()
 		}

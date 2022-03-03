@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/item_news_card"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginHorizontal="14dp"
+	android:layout_marginVertical="7dp"
+	android:clickable="true"
+	android:elevation="25dp"
+	android:focusable="true"
+	app:cardCornerRadius="20dp">
+
+	<LinearLayout
+		android:id="@+id/item_news_container_all"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:paddingBottom="15dp">
+
+		<ImageView
+			android:id="@+id/item_news_img"
+			android:layout_width="match_parent"
+			android:layout_height="150dp"
+			android:contentDescription="@string/default_berita_content_description"
+			android:cropToPadding="true"
+			android:scaleType="centerCrop"
+			app:srcCompat="@drawable/ic_baseline_newspaper_24" />
+
+		<LinearLayout
+			android:id="@+id/item_news_description"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingHorizontal="20dp">
+
+			<TextView
+				android:id="@+id/item_news_title"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginVertical="20dp"
+				android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+			<TextView
+				android:id="@+id/item_news_subtitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?attr/textAppearanceBodySmall"
+				android:textColor="@color/md_theme_light_onSurfaceVariant" />
+
+			<TextView
+				android:id="@+id/item_news_url"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:visibility="gone" />
+
+		</LinearLayout>
+	</LinearLayout>
+</androidx.cardview.widget.CardView>

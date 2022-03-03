@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CheckIn">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".CheckIn">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/check_in_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/check_in_app_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_baseline_close_24dp"
-            app:title="@string/page_title_check_in" />
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/topAppBar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			app:navigationIcon="@drawable/ic_baseline_close_24dp"
+			app:title="@string/page_title_check_in" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+	</com.google.android.material.appbar.AppBarLayout>
 
-    <com.budiyev.android.codescanner.CodeScannerView
-        android:id="@+id/scanner_view"
-        android:layout_width="match_parent"
-        android:layout_height="580dp"
-        app:autoFocusButtonColor="@android:color/white"
-        app:autoFocusButtonVisible="true"
-        app:flashButtonColor="@android:color/white"
-        app:flashButtonVisible="true"
-        app:layout_constraintBottom_toTopOf="@id/check_in_bottom_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_in_app_bar"
-        app:maskColor="#6C000000" />
+	<com.budiyev.android.codescanner.CodeScannerView
+		android:id="@+id/scanner_view"
+		android:layout_width="match_parent"
+		android:layout_height="580dp"
+		app:autoFocusButtonColor="@android:color/white"
+		app:autoFocusButtonVisible="true"
+		app:flashButtonColor="@android:color/white"
+		app:flashButtonVisible="true"
+		app:layout_constraintBottom_toTopOf="@id/check_in_bottom_bar"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/check_in_app_bar"
+		app:maskColor="#6C000000" />
 
-    <View
-        android:id="@+id/check_in_bottom_bar"
-        android:layout_width="412dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#00000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanner_view" />
+	<View
+		android:id="@+id/check_in_bottom_bar"
+		android:layout_width="412dp"
+		android:layout_height="80dp"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:background="#00000000"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/scanner_view" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/md_theme_dark_onPrimaryContainer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanner_view">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="@color/md_theme_dark_onPrimaryContainer"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/scanner_view">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/check_in_status_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="300dp"
-            app:cardCornerRadius="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+		<androidx.cardview.widget.CardView
+			android:id="@+id/check_in_status_card"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginStart="300dp"
+			app:cardCornerRadius="100dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/check_in_temperature_val"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="#D3E5F6"
-                android:gravity="center"
-                android:text="30\u2103"
-                android:textFontWeight="400"
-                android:textSize="15sp" />
-        </androidx.cardview.widget.CardView>
+			<TextView
+				android:id="@+id/check_in_temperature_val"
+				android:layout_width="65dp"
+				android:layout_height="65dp"
+				android:background="#D3E5F6"
+				android:gravity="center"
+				android:text="30\u2103"
+				android:textFontWeight="400"
+				android:textSize="15sp" />
+		</androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/check_in_temperature_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="150dp"
-            android:gravity="center"
-            android:text="Suhu ruangan"
-            android:textFontWeight="400"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/check_in_status_card"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+		<TextView
+			android:id="@+id/check_in_temperature_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="150dp"
+			android:gravity="center"
+			android:text="Suhu ruangan"
+			android:textFontWeight="400"
+			android:textSize="22sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/check_in_status_card"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
