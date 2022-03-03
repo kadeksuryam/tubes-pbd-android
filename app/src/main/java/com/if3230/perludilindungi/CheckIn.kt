@@ -1,6 +1,7 @@
 package com.if3230.perludilindungi
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -22,6 +23,9 @@ import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.google.android.gms.location.*
 import com.if3230.perludilindungi.Model.CheckInRequest
+import com.if3230.perludilindungi.Model.CheckInResponse
+import com.if3230.perludilindungi.Model.UserStatus
+import com.if3230.perludilindungi.databinding.ActivityCheckInBinding
 
 private const val PERMISSION_ALL = 1
 
@@ -47,23 +51,34 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
     lateinit var viewModel: MainViewModel
     private val perduliLindungiAPI = PerduliLindungiAPI.getInstance()
 
+    private lateinit var binding: ActivityCheckInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_check_in)
+        binding = ActivityCheckInBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
+        // setup initial permissions
         setupPermissions()
+
+        // setup location service, scanner, sensor
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         getLocationUpdates()
         codeScanner()
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
+        // setup view-model for check-in http request
         viewModel = ViewModelProvider(this, MainViewModelFactory(MainRepository(perduliLindungiAPI))).get(MainViewModel::class.java)
-        viewModel.checkInStatus.observe(this, Observer {
-            Log.d("tesHTTP", it.data.toString())
-        })
-        viewModel.errorMessage.observe(this, Observer {
-            Log.d("tesHTTP", it)
-        })
+        viewModel.checkInStatus.observe(this) {
+            val intent = Intent(this, CheckInResponseActivity::class.java).apply {
+                putExtra("userStatus", it.data.userStatus.toString())
+                putExtra("reason", it.data.reason)
+            }
+            startActivity(intent)
+        }
+        viewModel.errorMessage.observe(this) {
+            Log.e("error", it)
+        }
     }
 
     private fun hasPermissions(context: Context, vararg permissions: String): Boolean = permissions.all {
@@ -123,9 +138,7 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
 
 
     private fun codeScanner() {
-        val scanner_view = findViewById<CodeScannerView>(R.id.scanner_view)
-        val text_view = findViewById<TextView>(R.id.tmp_check_in_text_view)
-        codeScanner = CodeScanner(this, scanner_view)
+        codeScanner = CodeScanner(this, binding.scannerView)
 
         codeScanner.apply {
             camera = CodeScanner.CAMERA_BACK
@@ -140,14 +153,10 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
                 runOnUiThread {
                     if(qrCode != it.text) {
                         qrCode = it.text
-                        Log.d("result", it.text)
-                        Log.d("result", longitude.toString())
-                        Log.d("result", latitude.toString())
-                        text_view.text = it.text + " longitude: ${longitude}, latitude: ${latitude} "
 
                         val checkInRequest = CheckInRequest(qrCode, latitude, longitude)
-                        Log.d("result", checkInRequest.toString())
 
+                        // do http request
                         viewModel.doCheckIn(checkInRequest)
                     }
                 }
@@ -205,6 +214,7 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
     override fun onSensorChanged(sensorEvent: SensorEvent?) {
         if(sensorEvent?.values?.isNotEmpty() == true) {
             temperature = sensorEvent.values[0]
+            binding.checkInTemperatureVal.text = sensorEvent.values[0].toString() + "\u2103"
         }
     }
 
@@ -223,11 +233,12 @@ class CheckIn : AppCompatActivity(), SensorEventListener{
                     Toast.makeText(this, "Missing one or some permissions!", Toast.LENGTH_SHORT)
                 }
             }
-//            PERMISSION_LOCATION-> {
-//                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-//                    Toast.makeText(this, "You need the location permission to be able to use this app!", Toast.LENGTH_SHORT)
-//                }
-//            }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, Content::class.java)
+        startActivity(intent)
     }
 }
