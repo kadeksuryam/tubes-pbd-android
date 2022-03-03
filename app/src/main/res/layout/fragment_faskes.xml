@@ -70,6 +70,6 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-		tools:listitem="@layout/faskes_card" />
+		tools:listitem="@layout/item_faskes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

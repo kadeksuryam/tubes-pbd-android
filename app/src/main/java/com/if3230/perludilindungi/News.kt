@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.appbar.MaterialToolbar
 import com.if3230.perludilindungi.database.BookmarkedFaskesDatabase
 import com.if3230.perludilindungi.databinding.FragmentNewsBinding
+import com.if3230.perludilindungi.recycler_view.NewsAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -20,7 +21,7 @@ class News : Fragment() {
 	private lateinit var binding: FragmentNewsBinding
 	private lateinit var viewModel: MainViewModel
 	private var perluDilindungiAPI = PerluDilindungiAPI.getInstance()
-	private val adapter = RecyclerViewNewsAdapter()
+	private val adapter = NewsAdapter()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

@@ -1,19 +1,22 @@
-package com.if3230.perludilindungi
+package com.if3230.perludilindungi.recycler_view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.if3230.perludilindungi.Model.News
+import com.if3230.perludilindungi.NewsWebView
 import com.if3230.perludilindungi.databinding.ItemNewsBinding
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.NewsViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 	private var _newsList = mutableListOf<News>()
 	var newsList
 		get() = _newsList
+		@SuppressLint("NotifyDataSetChanged")
 		set(value) {
 			_newsList = value
 			notifyDataSetChanged()

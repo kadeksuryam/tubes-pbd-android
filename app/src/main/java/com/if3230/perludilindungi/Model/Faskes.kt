@@ -40,7 +40,7 @@ data class DetailFaskes(
 )
 
 data class Faskes(
-	val id: Int,
+	val id: Int?,
 	val kode: String,
 	val nama: String,
 	val kota: String,
@@ -50,8 +50,23 @@ data class Faskes(
 	val longitude: String,
 	val telp: String,
 	val jenis_fakses: String,
-	val kelas_rs: String,
+	val kelas_rs: String?,
 	val status: String,
-	val detail: List<DetailFaskes>,
-	val source_data: String,
-)
+	val detail: List<DetailFaskes>?,
+	val source_data: String?,
+) {
+	fun toBookmarkedFaskes(): BookmarkedFaskes {
+		return BookmarkedFaskes(
+			kode,
+			nama,
+			telp,
+			alamat,
+			kota,
+			provinsi,
+			latitude,
+			longitude,
+			jenis_fakses,
+			status
+		)
+	}
+}

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_view"
+    android:id="@+id/item_faskes"
     style="bold"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,13 +13,13 @@
     app:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/item_faskes_container_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/namaFaskes"
+            android:id="@+id/item_faskes_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -31,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tipeFaskes"
+            android:id="@+id/item_faskes_type"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner"
@@ -48,29 +47,29 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/detailFaskes"
+            android:id="@+id/item_faskes_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namaFaskes" />
+            app:layout_constraintTop_toBottomOf="@+id/item_faskes_name" />
 
         <TextView
-            android:id="@+id/noFaskes"
+            android:id="@+id/item_faskes_telp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:text="0843-2123445"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/kodeFaskes"
+            app:layout_constraintEnd_toStartOf="@+id/item_faskes_kode"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailFaskes" />
+            app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
 
         <TextView
-            android:id="@+id/kodeFaskes"
+            android:id="@+id/item_faskes_kode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -78,7 +77,7 @@
             android:textSize="8sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailFaskes" />
+            app:layout_constraintTop_toBottomOf="@+id/item_faskes_address" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

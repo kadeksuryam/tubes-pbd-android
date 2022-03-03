@@ -35,4 +35,23 @@ data class BookmarkedFaskes(
 		result = 31 * result + status.hashCode()
 		return result
 	}
+
+	fun toFaskes(): Faskes {
+		return Faskes(
+			null,
+			kode,
+			nama,
+			kota,
+			provinsi,
+			alamat,
+			latitude,
+			longitude,
+			telp,
+			jenisFaskes,
+			null,
+			status,
+			null,
+			null
+		)
+	}
 }
