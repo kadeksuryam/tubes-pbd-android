@@ -16,7 +16,7 @@ interface PerluDilindungiAPI {
 	@GET("api/get-news")
 	suspend fun getNews(): Response<NewsResponse>
 
-	@GET("get-province")
+	@GET("api/get-province")
 	suspend fun getProvince(): Response<ProvinceResponse>
 
 	companion object {
