@@ -1,5 +1,7 @@
 package com.if3230.perludilindungi
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -38,6 +40,7 @@ class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.New
 			Glide.with(holder.itemView.context).load(item.enclosure._url)
 				.into(holder.binding.itemNewsImg)
 		}
+		holder.binding.itemNewsUrl.text = item.guid
 	}
 
 	override fun getItemCount() = newsList.size
@@ -45,9 +48,10 @@ class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.New
 	inner class NewsViewHolder(val binding: ItemNewsBinding) :
 		RecyclerView.ViewHolder(binding.root) {
 		init {
-			binding.root.setOnClickListener {
-				Toast.makeText(binding.root.context, binding.itemNewsTitle.text, Toast.LENGTH_SHORT)
-					.show()
+			binding.root.setOnClickListener { view ->
+				val intent = Intent(view.context, NewsWebView::class.java)
+				intent.putExtra("url", binding.itemNewsUrl.text as String)
+				view.context.startActivity(intent)
 			}
 		}
 	}

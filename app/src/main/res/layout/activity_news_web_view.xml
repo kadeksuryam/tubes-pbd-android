@@ -4,6 +4,36 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".Model.NewsWebView">
+	tools:context=".NewsWebView">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:id="@+id/news_web_view_top_bar"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		app:layout_constraintBottom_toTopOf="@+id/news_web_view_progress"
+		app:layout_constraintTop_toTopOf="parent"
+		app:navigationIcon="@drawable/ic_baseline_x_24"
+		app:title="@string/title_news_fragment" />
+
+	<com.google.android.material.progressindicator.LinearProgressIndicator
+		android:id="@+id/news_web_view_progress"
+		android:layout_width="match_parent"
+		android:layout_height="10dp"
+		android:contentDescription="@string/default_progress_bar"
+		android:indeterminate="true"
+		app:layout_constraintBottom_toTopOf="@id/news_web_view"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/news_web_view_top_bar"
+		app:layout_constraintVertical_bias="0.0" />
+
+	<WebView
+		android:id="@+id/news_web_view"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="70dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

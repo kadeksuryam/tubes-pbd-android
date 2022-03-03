@@ -65,6 +65,6 @@ class News : Fragment() {
 		super.onResume()
 		val act = requireActivity()
 		val topBar: MaterialToolbar = act.findViewById(R.id.content_top_bar)!!
-		topBar.title = act.getString(R.string.title_berita_fragment)
+		topBar.title = act.getString(R.string.title_news_fragment)
 	}
 }

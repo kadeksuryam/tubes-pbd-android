@@ -1,17 +1,18 @@
 <resources>
-    <string name="app_name">Perlu Dilindungi</string>
-    <string name="hello_berita_fragment">Hello berita fragment</string>
-    <string name="hello_faskes_search_fragment">Hello faskes fragment</string>
-    <string name="hello_bookmarks_fragment">Hello bookmarks fragment</string>
-    <string name="hello_check_in_fragment">Hello check-in fragment</string>
-    <string name="berita_menu">Berita</string>
-    <string name="faskes_menu">Faskes</string>
-    <string name="bookmarks_menu">Bookmark</string>
-    <string name="check_in_menu">Check-in</string>
+	<string name="app_name">Perlu Dilindungi</string>
+	<string name="hello_berita_fragment">Hello berita fragment</string>
+	<string name="hello_faskes_search_fragment">Hello faskes fragment</string>
+	<string name="hello_bookmarks_fragment">Hello bookmarks fragment</string>
+	<string name="hello_check_in_fragment">Hello check-in fragment</string>
+	<string name="berita_menu">Berita</string>
+	<string name="faskes_menu">Faskes</string>
+	<string name="bookmarks_menu">Bookmark</string>
+	<string name="check_in_menu">Check-in</string>
 	<string name="default_berita_content_description">Cover Berita</string>
-    <string name="page_title_check_in">Check-in</string>
-	<string name="title_berita_fragment">Berita Covid-19</string>
+	<string name="page_title_check_in">Check-in</string>
+	<string name="title_news_fragment">Berita Covid-19</string>
 	<string name="title_faskes_search_fragment">Fasilitas Kesehatan</string>
 	<string name="title_bookmarks_fragment">Bookmarks Faskes</string>
 	<string name="title_check_in_fragment">Check-in</string>
+	<string name="default_progress_bar">Loading...</string>
 </resources>
