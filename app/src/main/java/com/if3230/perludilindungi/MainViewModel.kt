@@ -1,10 +1,12 @@
 package com.if3230.perludilindungi
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.if3230.perludilindungi.Model.*
+import com.if3230.perludilindungi.Model.CheckInRequest
+import com.if3230.perludilindungi.Model.CheckInResponse
+import com.if3230.perludilindungi.Model.NewsResponse
+import com.if3230.perludilindungi.Model.ProvinceResponse
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +19,6 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
 	val finishLoadingProvince = MutableLiveData(false)
 	val errorMessage = MutableLiveData<String>()
 	val finishLoadingNews = MutableLiveData(false)
-	private var job: Job? = null
 
 	fun doCheckIn(checkInRequest: CheckInRequest) {
 		val response = repository.doCheckIn(checkInRequest)
@@ -36,16 +37,18 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
 	}
 
 	fun getNews() {
-		job = CoroutineScope(Dispatchers.IO).launch {
-			val response = repository.getNews()
-			withContext(Dispatchers.Main) {
-				if (response.isSuccessful) {
-					news.postValue(response.body())
-				} else {
-					errorMessage.postValue(response.message())
-				}
-				finishLoadingNews.postValue(true)
+		viewModelScope.launch {
+			val response = withContext(Dispatchers.IO) {
+				val response = repository.getNews()
+				response
 			}
+
+			if (response.isSuccessful) {
+				news.value = response.body()
+			} else {
+				errorMessage.value = response.message()
+			}
+			finishLoadingNews.value = true
 		}
 	}
 
@@ -62,10 +65,5 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
 			}
 			finishLoadingProvince.value = true
 		}
-	}
-
-	override fun onCleared() {
-		super.onCleared()
-		job?.cancel()
 	}
 }
