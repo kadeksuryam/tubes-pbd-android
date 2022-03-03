@@ -18,7 +18,7 @@ import com.if3230.perludilindungi.databinding.FragmentNewsBinding
 class News : Fragment() {
 	private lateinit var binding: FragmentNewsBinding
 	private lateinit var viewModel: MainViewModel
-	private var perluDilindungiAPI = PerduliLindungiAPI.getInstance()
+	private var perluDilindungiAPI = PerluDilindungiAPI.getInstance()
 	private val adapter = RecyclerViewNewsAdapter()
 
 	override fun onCreate(savedInstanceState: Bundle?) {

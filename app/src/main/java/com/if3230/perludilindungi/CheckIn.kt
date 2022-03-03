@@ -40,7 +40,7 @@ class CheckIn : AppCompatActivity(), SensorEventListener {
 	private var temperature: Float = 0.0f
 
 	lateinit var viewModel: MainViewModel
-	private val perduliLindungiAPI = PerduliLindungiAPI.getInstance()
+	private val perduliLindungiAPI = PerluDilindungiAPI.getInstance()
 
 	private lateinit var binding: ActivityCheckInBinding
 	override fun onCreate(savedInstanceState: Bundle?) {
