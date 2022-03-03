@@ -58,7 +58,7 @@ class CheckInResponseActivity : AppCompatActivity() {
 			}
 
 			appBar.setNavigationOnClickListener {
-				val intent = Intent(this, CheckIn::class.java)
+				val intent = Intent(this, CheckInActivity::class.java)
 				startActivity(intent)
 			}
 		}
@@ -69,7 +69,7 @@ class CheckInResponseActivity : AppCompatActivity() {
 		val intent: Intent = if (userStatus.equals(UserStatus.green.toString())) {
 			Intent(this, Content::class.java)
 		} else {
-			Intent(this, CheckIn::class.java)
+			Intent(this, CheckInActivity::class.java)
 		}
 		startActivity(intent)
 	}

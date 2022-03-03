@@ -15,7 +15,7 @@ interface PerluDilindungiAPI {
 	@POST("check-in")
 	fun doCheckIn(@Body checkInRequest: CheckInRequest): Call<CheckInResponse>
 
-	@GET("get-news")
+	@GET("api/get-news")
 	suspend fun getNews(): Response<NewsResponse>
 
 	companion object {
@@ -24,7 +24,7 @@ interface PerluDilindungiAPI {
 		fun getInstance(): PerluDilindungiAPI {
 			if (perluDilindungiAPI == null) {
 				val retrofit = Retrofit.Builder()
-					.baseUrl("https://perludilindungi.herokuapp.com/api/")
+					.baseUrl("https://perludilindungi.herokuapp.com/")
 					.addConverterFactory(GsonConverterFactory.create())
 					.build()
 
