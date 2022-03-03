@@ -1,15 +1,15 @@
 package com.if3230.perludilindungi
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 import com.if3230.perludilindungi.databinding.ActivityNewsWebViewBinding
 
 class NewsWebView : AppCompatActivity() {
-	private lateinit var binding: ActivityNewsWebViewBinding;
+	private lateinit var binding: ActivityNewsWebViewBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

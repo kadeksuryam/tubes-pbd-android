@@ -11,24 +11,25 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface PerduliLindungiAPI {
-    @POST("check-in")
-    fun doCheckIn(@Body checkInRequest: CheckInRequest): Call<CheckInResponse>
-    @GET("get-news")
-    fun getNews(): Call<NewsResponse>
+	@POST("check-in")
+	fun doCheckIn(@Body checkInRequest: CheckInRequest): Call<CheckInResponse>
 
-    companion object {
-        var perduliLindungiAPI: PerduliLindungiAPI? = null
+	@GET("get-news")
+	fun getNews(): Call<NewsResponse>
 
-        fun getInstance(): PerduliLindungiAPI {
-            if (perduliLindungiAPI == null) {
-                val retrofit = Retrofit.Builder()
-                    .baseUrl("https://perludilindungi.herokuapp.com/api/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+	companion object {
+		var perduliLindungiAPI: PerduliLindungiAPI? = null
 
-                perduliLindungiAPI = retrofit.create(PerduliLindungiAPI::class.java)
-            }
-            return perduliLindungiAPI!!
-        }
-    }
+		fun getInstance(): PerduliLindungiAPI {
+			if (perduliLindungiAPI == null) {
+				val retrofit = Retrofit.Builder()
+					.baseUrl("https://perludilindungi.herokuapp.com/api/")
+					.addConverterFactory(GsonConverterFactory.create())
+					.build()
+
+				perduliLindungiAPI = retrofit.create(PerduliLindungiAPI::class.java)
+			}
+			return perduliLindungiAPI!!
+		}
+	}
 }
