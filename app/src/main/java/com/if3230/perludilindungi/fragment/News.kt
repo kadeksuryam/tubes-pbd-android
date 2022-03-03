@@ -22,7 +22,7 @@ class News : Fragment() {
 	private lateinit var binding: FragmentNewsBinding
 	private lateinit var viewModel: MainViewModel
 	private var perluDilindungiAPI = PerluDilindungiAPI.getInstance()
-	private val adapter = NewsAdapter()
+	private val adapter = NewsAdapter(this)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

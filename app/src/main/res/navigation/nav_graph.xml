@@ -8,7 +8,7 @@
 	<fragment
 		android:id="@+id/news"
 		android:name="com.if3230.perludilindungi.fragment.News"
-		android:label="fragment_berita"
+		android:label="fragment_news"
 		tools:layout="@layout/fragment_news" />
 	<fragment
 		android:id="@+id/faskes"
