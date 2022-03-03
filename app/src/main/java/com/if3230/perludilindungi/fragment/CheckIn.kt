@@ -1,4 +1,4 @@
-package com.if3230.perludilindungi
+package com.if3230.perludilindungi.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.if3230.perludilindungi.CheckInActivity
+import com.if3230.perludilindungi.R
 import com.if3230.perludilindungi.databinding.FragmentCheckInBinding
 
 // TODO: Rename parameter arguments, choose names that match

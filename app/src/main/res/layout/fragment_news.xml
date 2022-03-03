@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	tools:context=".News">
+	tools:context=".fragment.News">
 
 	<com.google.android.material.progressindicator.CircularProgressIndicator
 		android:id="@+id/news_recycler_view_progress"

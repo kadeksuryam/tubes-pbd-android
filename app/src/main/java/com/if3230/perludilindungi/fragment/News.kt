@@ -1,4 +1,4 @@
-package com.if3230.perludilindungi
+package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.appbar.MaterialToolbar
+import com.if3230.perludilindungi.*
 import com.if3230.perludilindungi.database.BookmarkedFaskesDatabase
 import com.if3230.perludilindungi.databinding.FragmentNewsBinding
 import com.if3230.perludilindungi.recycler_view.NewsAdapter

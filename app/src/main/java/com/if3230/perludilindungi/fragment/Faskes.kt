@@ -1,4 +1,4 @@
-package com.if3230.perludilindungi
+package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.MaterialToolbar
+import com.if3230.perludilindungi.R
 import com.if3230.perludilindungi.databinding.FragmentFaskesBinding
 
 // TODO: Rename parameter arguments, choose names that match

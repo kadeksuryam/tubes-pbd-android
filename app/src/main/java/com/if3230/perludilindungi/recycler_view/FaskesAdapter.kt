@@ -1,7 +1,6 @@
 package com.if3230.perludilindungi.recycler_view
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -17,13 +16,11 @@ class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 		set(value) {
 			_faskesList = value
 			notifyDataSetChanged()
-			Log.i("FaskesAdapter", _faskesList.toString())
 		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaskesAdapter.FaskesHolder {
 		val inflater = LayoutInflater.from(parent.context)
 		val binding = ItemFaskesBinding.inflate(inflater, parent, false)
-		Log.i("FaskesAdapter", "onCreateViewHolder")
 		return FaskesHolder(binding)
 	}
 
@@ -67,7 +64,6 @@ class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 		 */
 
 		holder.binding.itemFaskesType.text = type
-		Log.i("FaskesAdapter", holder.binding.itemFaskesType.backgroundTintList.toString())
 		holder.binding.root.setOnClickListener {
 			Toast.makeText(holder.binding.root.context, name, Toast.LENGTH_SHORT).show()
 		}

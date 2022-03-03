@@ -3,31 +3,26 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/nav_graph"
-	app:startDestination="@id/berita">
+	app:startDestination="@id/news">
 
 	<fragment
-		android:id="@+id/berita"
-		android:name="com.if3230.perludilindungi.News"
+		android:id="@+id/news"
+		android:name="com.if3230.perludilindungi.fragment.News"
 		android:label="fragment_berita"
 		tools:layout="@layout/fragment_news" />
 	<fragment
 		android:id="@+id/faskes"
-		android:name="com.if3230.perludilindungi.Faskes"
+		android:name="com.if3230.perludilindungi.fragment.Faskes"
 		android:label="fragment_faskes"
 		tools:layout="@layout/fragment_faskes" />
 	<fragment
 		android:id="@+id/bookmarks"
-		android:name="com.if3230.perludilindungi.Bookmarks"
+		android:name="com.if3230.perludilindungi.fragment.Bookmarks"
 		android:label="fragment_bookmarks"
 		tools:layout="@layout/fragment_bookmarks" />
-	<activity
-		android:id="@+id/mainActivity"
-		android:name="com.if3230.perludilindungi.MainActivity"
-		android:label="activity_main"
-		tools:layout="@layout/activity_main" />
 	<fragment
 		android:id="@+id/checkIn"
-		android:name="com.if3230.perludilindungi.CheckIn"
+		android:name="com.if3230.perludilindungi.fragment.CheckIn"
 		android:label="fragment_check_in"
 		tools:layout="@layout/fragment_check_in" />
 </navigation>

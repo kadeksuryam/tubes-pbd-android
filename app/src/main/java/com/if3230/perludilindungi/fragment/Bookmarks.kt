@@ -1,13 +1,13 @@
-package com.if3230.perludilindungi
+package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.appbar.MaterialToolbar
+import com.if3230.perludilindungi.*
 import com.if3230.perludilindungi.database.BookmarkedFaskesDatabase
 import com.if3230.perludilindungi.databinding.FragmentBookmarksBinding
 import com.if3230.perludilindungi.recycler_view.FaskesAdapter
@@ -32,8 +32,6 @@ class Bookmarks : Fragment() {
 				.get(MainViewModel::class.java)
 		viewModel.bookmarks.observe(this) {
 			adapter.faskesList = it.map { fk -> fk.toFaskes() }.toMutableList()
-
-			Log.i("BookmarksFragment", viewModel.bookmarks.value.toString())
 		}
 		viewModel.isBookmarksLoaded.observe(this) {
 			if (it) {
