@@ -38,21 +38,17 @@ class RecyclerViewNewsAdapter : RecyclerView.Adapter<RecyclerViewNewsAdapter.New
 			Glide.with(holder.itemView.context).load(item.enclosure._url)
 				.into(holder.binding.itemNewsImg)
 		}
-		holder.binding.itemNewsUrl.text = item.guid
+
+		holder.binding.root.setOnClickListener { view ->
+			val intent = Intent(view.context, NewsWebView::class.java)
+			intent.putExtra("url", item.guid)
+			view.context.startActivity(intent)
+		}
 	}
 
 	override fun getItemCount() = newsList.size
 
-	inner class NewsViewHolder(val binding: ItemNewsBinding) :
-		RecyclerView.ViewHolder(binding.root) {
-		init {
-			binding.root.setOnClickListener { view ->
-				val intent = Intent(view.context, NewsWebView::class.java)
-				intent.putExtra("url", binding.itemNewsUrl.text as String)
-				view.context.startActivity(intent)
-			}
-		}
-	}
+	inner class NewsViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root)
 
 	private fun parseTzId(tz: String): String {
 		return when (tz) {
