@@ -1,9 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Perlu Dilindungi</string>
-    <string name="hello_berita_fragment">Hello berita fragment</string>
-    <string name="hello_faskes_search_fragment">Hello faskes fragment</string>
-    <string name="hello_bookmarks_fragment">Hello bookmarks fragment</string>
-    <string name="hello_check_in_fragment">Hello check-in fragment</string>
     <string name="berita_menu">Berita</string>
     <string name="faskes_menu">Faskes</string>
     <string name="bookmarks_menu">Bookmark</string>
@@ -14,9 +10,15 @@
     <string name="title_faskes_search_fragment">Fasilitas Kesehatan</string>
     <string name="title_bookmarks_fragment">Bookmarks Faskes</string>
     <string name="title_check_in_fragment">Check-in</string>
-    <string name="default_progress_bar">Loading...</string>
+    <string name="default_progress_bar">Loading…</string>
     <string name="check_in_success">Berhasil</string>
     <string name="check_in_fail">Gagal</string>
+    <string name="default_faskes_name">Lempur Gn. Raya</string>
+    <string name="default_faskes_type">Rumah Sakit</string>
+    <string name="default_faskes_phone" tools:ignore="TypographyDashes">0853-68967771</string>
+    <string name="default_faskes_code">5060601</string>
+    <string name="default_faskes_address">Lempur Tengah, Gn. Raya, Kabupaten Kerinci, Jambi 37174, Indonesia</string>
+    <string name="item_faskes_kode_label">Kode: </string>
 
     <string-array name="provinsi">
         <item>Jawa Barat</item>
@@ -28,6 +30,4 @@
         <item>Bandung</item>
         <item>Tasikmalaya</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
