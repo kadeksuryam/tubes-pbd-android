@@ -66,5 +66,10 @@ class News : Fragment() {
 		val act = requireActivity()
 		val topBar: MaterialToolbar = act.findViewById(R.id.content_top_bar)!!
 		topBar.title = act.getString(R.string.title_news_fragment)
+
+		if (viewModel.finishLoadingNews.value!!) {
+			binding.newsRecyclerViewProgress.visibility = View.GONE
+			binding.newsRecyclerView.visibility = View.VISIBLE
+		}
 	}
 }
