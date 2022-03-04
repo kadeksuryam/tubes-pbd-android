@@ -76,10 +76,10 @@ class MainViewModel constructor(
 		}
 	}
 
-	fun getCity() {
+	fun getCity(startId: String) {
 		viewModelScope.launch {
 			val response = withContext(Dispatchers.IO){
-				val response = repository.getCity()
+				val response = repository.getCity(startId)
 				response
 			}
 			if (response.isSuccessful){
@@ -91,10 +91,10 @@ class MainViewModel constructor(
 		}
 	}
 
-	fun getFaskes() {
+	fun getFaskes(province: String, city: String) {
 		viewModelScope.launch {
 			val response = withContext(Dispatchers.IO){
-				val response = repository.getFaskes()
+				val response = repository.getFaskes(province, city)
 				response
 			}
 			if (response.isSuccessful){
