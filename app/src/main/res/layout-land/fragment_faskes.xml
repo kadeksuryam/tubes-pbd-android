@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/fragment_faskes"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".fragment.Faskes">
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recycler_list_faskes"
+		android:layout_width="400dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="16dp"
+		android:orientation="vertical"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/provinces_selection"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:listitem="@layout/item_faskes" />
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/provinces_selection"
+		style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+		android:layout_width="250dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginBottom="16dp"
+		android:hint="@string/provinsi_selection_label"
+		app:layout_constraintBottom_toTopOf="@+id/cities_selection"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<AutoCompleteTextView
+			android:id="@+id/provinces_selection_autocomplete"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:hint="@string/provinsi_selection_label"
+			android:inputType="none"
+			android:text="@string/default_province_selected" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/cities_selection"
+		style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="17dp"
+		android:hint="@string/cities_selection_label"
+		app:layout_constraintEnd_toEndOf="@+id/provinces_selection"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/provinces_selection">
+
+		<AutoCompleteTextView
+			android:id="@+id/cities_selection_autocomplete"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:inputType="none"
+			android:text="@string/default_city_selected" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
