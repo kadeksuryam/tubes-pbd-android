@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.if3230.perludilindungi.Model.Faskes
-import com.if3230.perludilindungi.fragment.DetailFaskes
 import com.if3230.perludilindungi.databinding.ItemFaskesBinding
+import com.if3230.perludilindungi.fragment.DetailFaskes
 
-class FaskesAdapter(private val oldFragment: Fragment) : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
+class FaskesAdapter(private val oldFragment: Fragment) :
+	RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 	private var _faskesList = mutableListOf<Faskes>()
 	var faskesList
 		get() = _faskesList

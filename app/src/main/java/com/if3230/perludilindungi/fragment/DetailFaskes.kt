@@ -1,11 +1,10 @@
 package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.if3230.perludilindungi.R
+import androidx.fragment.app.Fragment
 import com.if3230.perludilindungi.databinding.FragmentFaskesDetailBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -74,7 +73,14 @@ class DetailFaskes : Fragment() {
 		 */
 		// TODO: Rename and change types and number of parameters
 		@JvmStatic
-		fun newInstance(nama: String, kode: String, jenis: String?, alamat: String, telp: String, status: String) =
+		fun newInstance(
+			nama: String,
+			kode: String,
+			jenis: String?,
+			alamat: String,
+			telp: String,
+			status: String
+		) =
 			DetailFaskes().apply {
 				arguments = Bundle().apply {
 					putString(FASKES_NAMA, nama)

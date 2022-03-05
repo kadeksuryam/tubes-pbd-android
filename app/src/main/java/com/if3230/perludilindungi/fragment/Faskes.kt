@@ -38,7 +38,8 @@ class Faskes : Fragment() {
 		viewModel.getProvince()
 		viewModel.province.observe(this) {
 			val provinces = viewModel.province.value!!.results.map { it.key }
-			val provinceArrAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, provinces)
+			val provinceArrAdapter =
+				ArrayAdapter(requireContext(), R.layout.dropdown_item, provinces)
 			binding.provincesSelectionAutocomplete.setAdapter(provinceArrAdapter)
 		}
 		viewModel.city.observe(this) {
@@ -88,7 +89,7 @@ class Faskes : Fragment() {
 			Faskes().apply { }
 	}
 
-	private inner class ProvinceClickListener: AdapterView.OnItemClickListener {
+	private inner class ProvinceClickListener : AdapterView.OnItemClickListener {
 		override fun onItemClick(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
 			val prov = parent.getItemAtPosition(pos).toString()
 			selectedProvince = prov
@@ -96,7 +97,7 @@ class Faskes : Fragment() {
 		}
 	}
 
-	private inner class CityClickListener: AdapterView.OnItemClickListener {
+	private inner class CityClickListener : AdapterView.OnItemClickListener {
 		override fun onItemClick(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
 			val city = parent.getItemAtPosition(pos).toString()
 			viewModel.getFaskes(selectedProvince, city)
