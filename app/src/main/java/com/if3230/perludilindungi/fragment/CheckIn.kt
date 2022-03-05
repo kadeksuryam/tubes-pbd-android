@@ -2,10 +2,13 @@ package com.if3230.perludilindungi.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.if3230.perludilindungi.CheckInActivity
 import com.if3230.perludilindungi.R
 import com.if3230.perludilindungi.databinding.FragmentCheckInBinding
@@ -35,6 +38,12 @@ class CheckIn : Fragment() {
 	): View? {
 		// Inflate the layout for this fragment
 		return inflater.inflate(R.layout.fragment_check_in, container, false)
+	}
+
+	override fun onResume() {
+		super.onResume()
+		val nav = this.findNavController()
+		nav.navigate(R.id.news)
 	}
 
 	companion object {

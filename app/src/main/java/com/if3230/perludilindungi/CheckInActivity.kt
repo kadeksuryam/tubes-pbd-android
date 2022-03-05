@@ -82,8 +82,7 @@ class CheckInActivity : AppCompatActivity(), SensorEventListener {
 		setSupportActionBar(binding.topAppBar)
 
 		binding.topAppBar.setNavigationOnClickListener {
-			val intent = Intent(this, Content::class.java)
-			startActivity(intent)
+			finish()
 		}
 	}
 
@@ -258,7 +257,8 @@ class CheckInActivity : AppCompatActivity(), SensorEventListener {
 
 	override fun onBackPressed() {
 		super.onBackPressed()
-		val intent = Intent(this, Content::class.java)
-		startActivity(intent)
+//		val intent = Intent(this, Content::class.java)
+//		startActivity(intent)
+		finish()
 	}
 }

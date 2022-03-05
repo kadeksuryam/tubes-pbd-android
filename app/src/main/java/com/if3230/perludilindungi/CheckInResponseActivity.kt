@@ -58,19 +58,18 @@ class CheckInResponseActivity : AppCompatActivity() {
 			}
 
 			appBar.setNavigationOnClickListener {
-				val intent = Intent(this, CheckInActivity::class.java)
-				startActivity(intent)
+				finish()
 			}
 		}
 	}
 
 	override fun onBackPressed() {
 		super.onBackPressed()
-		val intent: Intent = if (userStatus.equals(UserStatus.green.toString())) {
-			Intent(this, Content::class.java)
+		if (userStatus.equals(UserStatus.green.toString())) {
+			finish()
 		} else {
-			Intent(this, CheckInActivity::class.java)
+			val intent = Intent(this, CheckInActivity::class.java)
+			startActivity(intent)
 		}
-		startActivity(intent)
 	}
 }
