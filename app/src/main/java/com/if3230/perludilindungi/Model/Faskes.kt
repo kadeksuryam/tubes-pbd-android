@@ -51,7 +51,7 @@ data class Faskes(
 	val latitude: String,
 	val longitude: String,
 	val telp: String,
-	val jenis_fakses: String,
+	val jenis_faskes: String?,
 	val kelas_rs: String?,
 	val status: String,
 	val detail: List<DetailFaskes>?,
@@ -67,7 +67,7 @@ data class Faskes(
 			provinsi,
 			latitude,
 			longitude,
-			jenis_fakses,
+			jenis_faskes,
 			status
 		)
 	}

@@ -39,4 +39,8 @@
 	</string-array>
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="provinsi_selection_label">Provinsi</string>
+	<string name="default_province_selected">Tidak ada provinsi yang dipilih</string>
+	<string name="cities_selection_label">Kota</string>
+	<string name="default_city_selected">Tidak ada kota yang dipilih</string>
 </resources>

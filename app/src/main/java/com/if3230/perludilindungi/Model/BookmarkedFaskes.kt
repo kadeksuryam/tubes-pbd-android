@@ -16,7 +16,7 @@ data class BookmarkedFaskes(
 	val latitude: String,
 	val longitude: String,
 	@ColumnInfo(name = "jenis_faskes")
-	val jenisFaskes: String,
+	val jenisFaskes: String?,
 	val status: String,
 ) {
 	override fun equals(other: Any?): Boolean = (other is BookmarkedFaskes)

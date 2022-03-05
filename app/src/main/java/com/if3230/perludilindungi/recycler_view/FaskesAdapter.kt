@@ -31,9 +31,10 @@ class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 		holder.binding.itemFaskesAddress.text = item.alamat
 		holder.binding.itemFaskesCode.text = item.kode
 		holder.binding.itemFaskesPhone.text = item.telp
-		var type = item.jenis_fakses.titlecase()
-		if (type == "") {
-			type = name.split(" ")[0]
+		val type = if (item.jenis_faskes == "" || item.jenis_faskes == null) {
+			"-"
+		} else {
+			item.jenis_faskes.titlecase()
 		}
 
 		// Change color for faskes label

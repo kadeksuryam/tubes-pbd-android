@@ -2,87 +2,71 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/frameLayout"
+	android:id="@+id/fragment_faskes"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".fragment.Faskes">
 
 	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/textInputLayout"
+		android:id="@+id/provinces_selection"
 		style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="32dp"
 		android:layout_marginTop="32dp"
 		android:layout_marginEnd="32dp"
-		android:hint="Provinsi"
+		android:hint="@string/provinsi_selection_label"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
 		<AutoCompleteTextView
-			android:id="@+id/autoCompleteTextView"
+			android:id="@+id/provinces_selection_autocomplete"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
 			android:inputType="none"
-			android:text="Jawa Barat" />
+			android:hint="@string/provinsi_selection_label"
+			android:text="@string/default_province_selected" />
 	</com.google.android.material.textfield.TextInputLayout>
 
 	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/textInputLayout2"
+		android:id="@+id/cities_selection"
 		style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="32dp"
 		android:layout_marginTop="32dp"
 		android:layout_marginEnd="32dp"
-		android:hint="Kota"
+		android:hint="@string/cities_selection_label"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+		app:layout_constraintTop_toBottomOf="@id/provinces_selection">
 
 		<AutoCompleteTextView
-			android:id="@+id/autoCompleteTextView6"
+			android:id="@+id/cities_selection_autocomplete"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:inputType="none"
-			android:text="Bandung" />
+			android:text="@string/default_city_selected" />
 	</com.google.android.material.textfield.TextInputLayout>
 
-	<!--	<Spinner-->
-	<!--		android:id="@+id/spinnerProvince"-->
-	<!--		android:layout_width="match_parent"-->
-	<!--		android:layout_height="wrap_content"-->
-	<!--		android:layout_marginStart="8dp"-->
-	<!--		android:layout_marginTop="32dp"-->
-	<!--		android:layout_marginEnd="8dp"-->
-	<!--		app:layout_constraintEnd_toEndOf="parent"-->
-	<!--		app:layout_constraintStart_toStartOf="parent"-->
-	<!--		app:layout_constraintTop_toTopOf="parent"></Spinner>-->
-
-	<!--	<Spinner-->
-	<!--		android:id="@+id/spinnerCity"-->
-	<!--		android:layout_width="match_parent"-->
-	<!--		android:layout_height="wrap_content"-->
-	<!--		android:layout_marginStart="32dp"-->
-	<!--		android:layout_marginTop="24dp"-->
-	<!--		android:layout_marginEnd="32dp"-->
-	<!--		app:layout_constraintEnd_toEndOf="parent"-->
-	<!--		app:layout_constraintStart_toStartOf="parent"-->
-	<!--		app:layout_constraintTop_toBottomOf="@+id/spinnerProvince"></Spinner>-->
-
 	<androidx.recyclerview.widget.RecyclerView
-		android:layout_width="0dp"
-		android:layout_height="543dp"
+		android:id="@+id/recycler_list_faskes"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
 		android:layout_marginStart="32dp"
 		android:layout_marginTop="32dp"
 		android:layout_marginEnd="32dp"
+		android:orientation="vertical"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+		app:layout_constraintTop_toBottomOf="@id/cities_selection"
+		app:layout_constraintVertical_bias="1.0"
 		tools:listitem="@layout/item_faskes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
