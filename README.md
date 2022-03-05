@@ -25,45 +25,45 @@
 
 - List
 
-[![List](./screenshots/berita_list.jpg =x500)](./screenshots/berita_list.jpg)
+[![List](./screenshots/berita_list.jpg)](./screenshots/berita_list.jpg)
 
 - Webview
 
-[![Webview](./screenshots/berita_webview.jpg =x500)](./screenshots/berita_webview.jpg)
+[![Webview](./screenshots/berita_webview.jpg)](./screenshots/berita_webview.jpg)
 
 ### Search Fasilitas Kesehatan
 
 - Start (blank)
 
-[![Blank](./screenshots/search_faskes_start.jpg =x500)](./screenshots/search_faskes_start.jpg)
+[![Blank](./screenshots/search_faskes_start.jpg)](./screenshots/search_faskes_start.jpg)
 
 - List
 
-[![List](./screenshots/search_faskes_list.jpg =x500)](./screenshots/search_faskes_list.jpg)
+[![List](./screenshots/search_faskes_list.jpg)](./screenshots/search_faskes_list.jpg)
 
 ### Bookmarks
 
 - Empty
 
-[![Empty](./screenshots/bookmarks_empty.jpg =x500)](./screenshots/bookmarks_empty.jpg)
+[![Empty](./screenshots/bookmarks_empty.jpg)](./screenshots/bookmarks_empty.jpg)
 
 - Filled
 
-[![Filled](./screenshots/bookmarks_filled.jpg =x500)](./screenshots/bookmarks_filled.jpg)
+[![Filled](./screenshots/bookmarks_filled.jpg)](./screenshots/bookmarks_filled.jpg)
 
 ### Scan
 
 - Start
 
-[![Start](./screenshots/scan.jpg =x500)](./screenshots/scan.jpg)
+[![Start](./screenshots/scan.jpg)](./screenshots/scan.jpg)
 
 - Scan result: green
 
-[![Start](./screenshots/scan_result_green.jpg =x500)](./screenshots/scan_result_green.jpg)
+[![Start](./screenshots/scan_result_green.jpg)](./screenshots/scan_result_green.jpg)
 
 - Start result: red
 
-[![Start](./screenshots/scan_result_red.jpg =x500)](./screenshots/scan_result_red.jpg)
+[![Start](./screenshots/scan_result_red.jpg)](./screenshots/scan_result_red.jpg)
 
 ## Pembagian Tugas
 
