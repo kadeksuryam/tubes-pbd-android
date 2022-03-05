@@ -65,8 +65,8 @@ class Faskes : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		binding.recyclerListFaskes?.adapter = adapter
-		binding.recyclerListFaskes?.setHasFixedSize(true)
+		binding.recyclerListFaskes.adapter = adapter
+		binding.recyclerListFaskes.setHasFixedSize(true)
 	}
 
 	override fun onResume() {

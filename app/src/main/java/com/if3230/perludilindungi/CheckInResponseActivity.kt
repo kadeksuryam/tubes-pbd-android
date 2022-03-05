@@ -38,7 +38,7 @@ class CheckInResponseActivity : AppCompatActivity() {
 			)
 
 			appBar.setNavigationOnClickListener {
-				val intent = Intent(this, Content::class.java)
+				val intent = Intent(this, MainActivity::class.java)
 				startActivity(intent)
 			}
 		} else {

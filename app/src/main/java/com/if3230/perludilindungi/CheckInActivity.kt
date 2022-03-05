@@ -257,8 +257,6 @@ class CheckInActivity : AppCompatActivity(), SensorEventListener {
 
 	override fun onBackPressed() {
 		super.onBackPressed()
-//		val intent = Intent(this, Content::class.java)
-//		startActivity(intent)
 		finish()
 	}
 }
