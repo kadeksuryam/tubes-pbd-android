@@ -3,12 +3,14 @@ package com.if3230.perludilindungi.recycler_view
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.if3230.perludilindungi.Model.Faskes
 import com.if3230.perludilindungi.databinding.ItemFaskesBinding
+import com.if3230.perludilindungi.fragment.DetailFaskes
 
-class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
+class FaskesAdapter(private val oldFragment: Fragment) :
+	RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 	private var _faskesList = mutableListOf<Faskes>()
 	var faskesList
 		get() = _faskesList
@@ -66,7 +68,20 @@ class FaskesAdapter : RecyclerView.Adapter<FaskesAdapter.FaskesHolder>() {
 
 		holder.binding.itemFaskesType.text = type
 		holder.binding.root.setOnClickListener {
-			Toast.makeText(holder.binding.root.context, name, Toast.LENGTH_SHORT).show()
+			val faskesDetail = DetailFaskes.newInstance(
+				item.nama,
+				item.kode,
+				item.jenis_faskes,
+				item.alamat,
+				item.telp,
+				item.status
+			)
+			val fragmentManager = oldFragment.parentFragmentManager
+			val transaction = fragmentManager.beginTransaction()
+			transaction.replace(oldFragment.id, faskesDetail)
+			transaction.addToBackStack(oldFragment::class.java.toString())
+			transaction.setReorderingAllowed(true)
+			transaction.commit()
 		}
 	}
 

@@ -19,7 +19,7 @@ import com.if3230.perludilindungi.recycler_view.FaskesAdapter
 class Bookmarks : Fragment() {
 	private lateinit var binding: FragmentBookmarksBinding
 	private lateinit var viewModel: MainViewModel
-	private val adapter = FaskesAdapter()
+	private val adapter = FaskesAdapter(this)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

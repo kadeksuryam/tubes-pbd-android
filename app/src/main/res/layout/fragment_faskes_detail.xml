@@ -1,163 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/faskesDetail"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/faskesDetail"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".fragment.DetailFaskes">
 
-    <TextView
-        android:id="@+id/item_faskes_code_label2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/item_faskes_kode_label"
-        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namaFaskes" />
+	<TextView
+		android:id="@+id/item_faskes_code_label2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="16dp"
+		android:text="@string/item_faskes_kode_label"
+		android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/namaFaskes" />
 
-    <TextView
-        android:id="@+id/item_faskes_code2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/default_faskes_code"
-        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-        app:layout_constraintStart_toEndOf="@+id/item_faskes_code_label2"
-        app:layout_constraintTop_toTopOf="@+id/item_faskes_code_label2" />
+	<TextView
+		android:id="@+id/codeFaskes"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:text="@string/default_faskes_code"
+		android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+		app:layout_constraintStart_toEndOf="@+id/item_faskes_code_label2"
+		app:layout_constraintTop_toTopOf="@+id/item_faskes_code_label2" />
 
-    <TextView
-        android:id="@+id/tipeFaskes"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/md_theme_light_tertiaryContainer"
-        android:paddingLeft="6dp"
-        android:paddingTop="2.5dp"
-        android:paddingRight="6dp"
-        android:paddingBottom="2.5dp"
-        android:text="@string/default_faskes_type"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namaFaskes" />
+	<TextView
+		android:id="@+id/tipeFaskes"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="16dp"
+		android:background="@drawable/rounded_corner"
+		android:backgroundTint="@color/md_theme_light_tertiaryContainer"
+		android:paddingLeft="6dp"
+		android:paddingTop="2.5dp"
+		android:paddingRight="6dp"
+		android:paddingBottom="2.5dp"
+		android:text="@string/default_faskes_type"
+		android:textAlignment="center"
+		android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/namaFaskes" />
 
-    <TextView
-        android:id="@+id/namaFaskes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/default_faskes_name"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+	<TextView
+		android:id="@+id/namaFaskes"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="48dp"
+		android:layout_marginEnd="16dp"
+		android:text="@string/default_faskes_name"
+		android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/icPlace"
-        android:layout_width="30dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-	    android:contentDescription="@string/label_place"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_faskes_code_label2"
-        app:srcCompat="@drawable/ic_place_foreground" />
+	<ImageView
+		android:id="@+id/icPlace"
+		android:layout_width="30dp"
+		android:layout_height="39dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="24dp"
+		android:contentDescription="@string/label_place"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/item_faskes_code_label2"
+		app:srcCompat="@drawable/ic_place_foreground" />
 
-    <ImageView
-        android:id="@+id/icVaccine"
-        android:layout_width="30dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/label_status"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icCall"
-        app:srcCompat="@mipmap/ic_vaccine_foreground" />
+	<ImageView
+		android:id="@+id/icVaccine"
+		android:layout_width="30dp"
+		android:layout_height="39dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="8dp"
+		android:contentDescription="@string/label_status"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/icCall"
+		app:srcCompat="@mipmap/ic_vaccine_foreground" />
 
-    <ImageView
-        android:id="@+id/icCall"
-        android:layout_width="30dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/label_phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icPlace"
-        app:srcCompat="@drawable/ic_call_foreground" />
+	<ImageView
+		android:id="@+id/icCall"
+		android:layout_width="30dp"
+		android:layout_height="39dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="8dp"
+		android:contentDescription="@string/label_phone"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/icPlace"
+		app:srcCompat="@drawable/ic_call_foreground" />
 
-    <TextView
-        android:id="@+id/alamatFaskes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/default_faskes_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/icPlace"
-        app:layout_constraintTop_toTopOf="@+id/icPlace" />
+	<TextView
+		android:id="@+id/alamatFaskes"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="19dp"
+		android:layout_marginEnd="16dp"
+		android:text="@string/default_faskes_address"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/icPlace"
+		app:layout_constraintTop_toTopOf="@+id/icPlace" />
 
-    <TextView
-        android:id="@+id/noFaskes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/default_faskes_phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/icPlace"
-        app:layout_constraintTop_toTopOf="@+id/icCall" />
+	<TextView
+		android:id="@+id/noFaskes"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="19dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="16dp"
+		android:text="@string/default_faskes_phone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toEndOf="@+id/icPlace"
+		app:layout_constraintTop_toTopOf="@+id/icCall" />
 
-    <TextView
-        android:id="@+id/vaksinFaskes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/default_faskes_status"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/icPlace"
-        app:layout_constraintTop_toTopOf="@+id/icVaccine" />
+	<TextView
+		android:id="@+id/vaksinFaskes"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="19dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="16dp"
+		android:text="@string/default_faskes_status"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toEndOf="@+id/icPlace"
+		app:layout_constraintTop_toTopOf="@+id/icVaccine" />
 
-    <Button
-        android:id="@+id/buttonBookmark"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#FFEDE9"
-        android:drawableStart="@drawable/ic_star_foreground"
-        android:padding="10dp"
-        android:text="@string/unbookmarked"
-        android:textColor="@android:color/black"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icVaccine" />
+	<Button
+		android:id="@+id/buttonBookmark"
+		android:layout_width="wrap_content"
+		android:layout_height="52dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="60dp"
+		android:layout_marginEnd="16dp"
+		android:backgroundTint="#FFEDE9"
+		android:drawableLeft="@drawable/ic_star_foreground"
+		android:padding="10dp"
+		android:text="@string/unbookmarked"
+		android:textColor="@android:color/black"
+		app:cornerRadius="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/icVaccine" />
 
-    <Button
-        android:id="@+id/buttonGmaps"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/md_theme_dark_onPrimaryContainer"
-        android:drawableStart="@drawable/ic_place_button_foreground"
-        android:padding="10dp"
-        android:text="@string/open_in_gmaps"
-        android:textColor="@android:color/black"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/buttonBookmark"
-        app:layout_constraintStart_toStartOf="@+id/buttonBookmark"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBookmark" />
+	<Button
+		android:id="@+id/buttonGmaps"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="32dp"
+		android:backgroundTint="@color/md_theme_dark_onPrimaryContainer"
+		android:drawableLeft="@drawable/ic_place_button_foreground"
+		android:padding="10dp"
+		android:text="@string/open_in_gmaps"
+		android:textColor="@android:color/black"
+		app:cornerRadius="8dp"
+		app:layout_constraintEnd_toEndOf="@+id/buttonBookmark"
+		app:layout_constraintStart_toStartOf="@+id/buttonBookmark"
+		app:layout_constraintTop_toBottomOf="@+id/buttonBookmark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

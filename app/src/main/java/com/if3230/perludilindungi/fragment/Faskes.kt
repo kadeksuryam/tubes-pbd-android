@@ -1,7 +1,6 @@
 package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +22,7 @@ import com.if3230.perludilindungi.recycler_view.FaskesAdapter
 class Faskes : Fragment() {
 	private lateinit var binding: FragmentFaskesBinding
 	private lateinit var viewModel: MainViewModel
-	private val adapter = FaskesAdapter()
+	private val adapter = FaskesAdapter(this)
 	private lateinit var selectedProvince: String
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +38,8 @@ class Faskes : Fragment() {
 		viewModel.getProvince()
 		viewModel.province.observe(this) {
 			val provinces = viewModel.province.value!!.results.map { it.key }
-			val provinceArrAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, provinces)
+			val provinceArrAdapter =
+				ArrayAdapter(requireContext(), R.layout.dropdown_item, provinces)
 			binding.provincesSelectionAutocomplete.setAdapter(provinceArrAdapter)
 		}
 		viewModel.city.observe(this) {
@@ -48,9 +48,6 @@ class Faskes : Fragment() {
 			binding.citiesSelectionAutocomplete.setAdapter(citiesArrAdapter)
 		}
 		viewModel.faskes.observe(this) {
-			it.data.forEach { datum ->
-				Log.i("FaskesFragment", datum.jenis_faskes.toString())
-			}
 			adapter.faskesList = it.data.toMutableList()
 		}
 	}
@@ -92,7 +89,7 @@ class Faskes : Fragment() {
 			Faskes().apply { }
 	}
 
-	private inner class ProvinceClickListener: AdapterView.OnItemClickListener {
+	private inner class ProvinceClickListener : AdapterView.OnItemClickListener {
 		override fun onItemClick(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
 			val prov = parent.getItemAtPosition(pos).toString()
 			selectedProvince = prov
@@ -100,7 +97,7 @@ class Faskes : Fragment() {
 		}
 	}
 
-	private inner class CityClickListener: AdapterView.OnItemClickListener {
+	private inner class CityClickListener : AdapterView.OnItemClickListener {
 		override fun onItemClick(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
 			val city = parent.getItemAtPosition(pos).toString()
 			viewModel.getFaskes(selectedProvince, city)

@@ -7,5 +7,6 @@ class MainRepository constructor(private val perluDilindungiAPI: PerluDilindungi
 	suspend fun getNews() = perluDilindungiAPI.getNews()
 	suspend fun getProvince() = perluDilindungiAPI.getProvince()
 	suspend fun getCity(startId: String) = perluDilindungiAPI.getCity(startId)
-	suspend fun getFaskes(province: String, city: String) = perluDilindungiAPI.getFaskes(province,city)
+	suspend fun getFaskes(province: String, city: String) =
+		perluDilindungiAPI.getFaskes(province, city)
 }
