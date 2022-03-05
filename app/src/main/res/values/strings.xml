@@ -18,7 +18,14 @@
 	<string name="default_faskes_phone" tools:ignore="TypographyDashes">0853-68967771</string>
 	<string name="default_faskes_code">5060601</string>
 	<string name="default_faskes_address">Lempur Tengah, Gn. Raya, Kabupaten Kerinci, Jambi 37174, Indonesia</string>
+	<string name="default_faskes_status">Siap vaksinasi</string>
 	<string name="item_faskes_kode_label">Kode: </string>
+	<string name="bookmarked">Bookmarked</string>
+	<string name="unbookmarked">Unbookmarked</string>
+	<string name="open_in_gmaps">Open in Google Maps</string>
+	<string name="label_place">alamat</string>
+	<string name="label_status">status vaksinasi</string>
+	<string name="label_phone">telp.</string>
 
 	<string-array name="provinsi">
 		<item>Jawa Barat</item>
