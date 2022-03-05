@@ -48,17 +48,18 @@ data class Faskes(
 	val kota: String,
 	val provinsi: String,
 	val alamat: String,
-	val latitude: String,
-	val longitude: String,
-	val telp: String,
+	val latitude: String?,
+	val longitude: String?,
+	val telp: String?,
 	val jenis_faskes: String?,
 	val kelas_rs: String?,
-	val status: String,
+	val status: String?,
 	val detail: List<DetailFaskes>?,
 	val source_data: String?,
 ) {
 	fun toBookmarkedFaskes(): BookmarkedFaskes {
 		return BookmarkedFaskes(
+			0,
 			kode,
 			nama,
 			telp,

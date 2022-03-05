@@ -1,5 +1,7 @@
 package com.if3230.perludilindungi.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +9,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.if3230.perludilindungi.databinding.FragmentFaskesDetailBinding
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val FASKES_NAMA = "param1"
 private const val FASKES_KODE = "param2"
-private const val FASKES_JENIS = "param2"
-private const val FASKES_ALAMAT = "param2"
-private const val FASKES_TELP = "param2"
-private const val FASKES_STATUS = "param2"
+private const val FASKES_JENIS = "param3"
+private const val FASKES_ALAMAT = "param4"
+private const val FASKES_TELP = "param5"
+private const val FASKES_STATUS = "param6"
+private const val FASKES_LAT = "param7"
+private const val FASKES_LNG = "param8"
 
 /**
  * A simple [Fragment] subclass.
@@ -22,13 +25,14 @@ private const val FASKES_STATUS = "param2"
  * create an instance of this fragment.
  */
 class DetailFaskes : Fragment() {
-	// TODO: Rename and change types of parameters
 	private var faskesNama: String? = null
 	private var faskesKode: String? = null
 	private var faskesJenis: String? = null
 	private var faskesAlamat: String? = null
 	private var faskesTelp: String? = null
 	private var faskesStatus: String? = null
+	private var faskesLat: String? = null
+	private var faskesLng: String? = null
 	private lateinit var binding: FragmentFaskesDetailBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +44,8 @@ class DetailFaskes : Fragment() {
 			faskesAlamat = it.getString(FASKES_ALAMAT)
 			faskesTelp = it.getString(FASKES_TELP)
 			faskesStatus = it.getString(FASKES_STATUS)
+			faskesLat = it.getString(FASKES_LAT)
+			faskesLng = it.getString(FASKES_LNG)
 		}
 	}
 
@@ -55,6 +61,14 @@ class DetailFaskes : Fragment() {
 		binding.alamatFaskes.text = faskesAlamat
 		binding.noFaskes.text = faskesTelp
 		binding.vaksinFaskes.text = faskesStatus
+
+		binding.buttonGmaps.setOnClickListener {
+			val gmmIntentUri = Uri.parse("geo:$faskesLat,$faskesLng")
+			val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+			mapIntent.setPackage("com.google.android.apps.maps")
+			startActivity(mapIntent)
+		}
+
 		return binding.root
 	}
 
@@ -69,17 +83,20 @@ class DetailFaskes : Fragment() {
 		 * @param alamat Parameter 2.
 		 * @param telp Parameter 2.
 		 * @param status Parameter 2.
+		 * @param latitude Parameter 2.
+		 * @param longitude Parameter 2.
 		 * @return A new instance of fragment DetailFaskes.
 		 */
-		// TODO: Rename and change types and number of parameters
 		@JvmStatic
 		fun newInstance(
 			nama: String,
 			kode: String,
 			jenis: String?,
 			alamat: String,
-			telp: String,
-			status: String
+			telp: String?,
+			status: String?,
+			latitude: String?,
+			longitude: String?,
 		) =
 			DetailFaskes().apply {
 				arguments = Bundle().apply {
@@ -87,8 +104,10 @@ class DetailFaskes : Fragment() {
 					putString(FASKES_KODE, kode)
 					putString(FASKES_JENIS, jenis ?: "-")
 					putString(FASKES_ALAMAT, alamat)
-					putString(FASKES_TELP, telp)
-					putString(FASKES_STATUS, status)
+					putString(FASKES_TELP, telp ?: "Tidak Diketahui")
+					putString(FASKES_STATUS, status ?: "Tidak Diketahui")
+					putString(FASKES_LAT, latitude ?: "0.0")
+					putString(FASKES_LNG, longitude ?: "0.0")
 				}
 			}
 	}

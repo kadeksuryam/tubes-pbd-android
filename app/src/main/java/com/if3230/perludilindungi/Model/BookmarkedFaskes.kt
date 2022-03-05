@@ -6,18 +6,19 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "bookmarked_faskes")
 data class BookmarkedFaskes(
-	@PrimaryKey
+	@PrimaryKey(autoGenerate = true)
+	val _id: Int,
 	val kode: String,
 	val nama: String,
-	val telp: String,
+	val telp: String?,
 	val alamat: String,
 	val kota: String,
 	val provinsi: String,
-	val latitude: String,
-	val longitude: String,
+	val latitude: String?,
+	val longitude: String?,
 	@ColumnInfo(name = "jenis_faskes")
 	val jenisFaskes: String?,
-	val status: String,
+	val status: String?,
 ) {
 	override fun equals(other: Any?): Boolean = (other is BookmarkedFaskes)
 			&& other.kode == this.kode

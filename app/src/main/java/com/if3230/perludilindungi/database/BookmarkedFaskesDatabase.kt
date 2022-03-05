@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.if3230.perludilindungi.Model.BookmarkedFaskes
 import com.if3230.perludilindungi.dao.BookmarkedFaskesDao
 
-@Database(entities = [BookmarkedFaskes::class], version = 2)
+@Database(entities = [BookmarkedFaskes::class], version = 3)
 abstract class BookmarkedFaskesDatabase : RoomDatabase() {
 	abstract fun bookmarkedFaskesDao(): BookmarkedFaskesDao
 

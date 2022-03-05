@@ -39,33 +39,6 @@ class FaskesAdapter(private val oldFragment: Fragment) :
 			item.jenis_faskes.titlecase()
 		}
 
-		// Change color for faskes label
-		/*
-		val typeUC = type.uppercase()
-		val ctx = holder.binding.root.context
-		val valueColor = TypedValue()
-		when (typeUC) {
-			JenisFaskes.KLINIK.toString() -> ctx
-				.theme.resolveAttribute(
-					R.color.md_theme_light_primaryContainer,
-					valueColor,
-					true
-				)
-			JenisFaskes.PUSKESMAS.toString() -> ctx
-				.theme.resolveAttribute(
-					R.color.md_theme_light_errorContainer,
-					valueColor,
-					true
-				)
-			JenisFaskes.FKTP.toString() -> ctx
-				.theme.resolveAttribute(
-					R.color.md_theme_light_secondaryContainer,
-					valueColor,
-					true
-				)
-		}
-		 */
-
 		holder.binding.itemFaskesType.text = type
 		holder.binding.root.setOnClickListener {
 			val faskesDetail = DetailFaskes.newInstance(
@@ -74,7 +47,9 @@ class FaskesAdapter(private val oldFragment: Fragment) :
 				item.jenis_faskes,
 				item.alamat,
 				item.telp,
-				item.status
+				item.status,
+				item.latitude,
+				item.longitude
 			)
 			val fragmentManager = oldFragment.parentFragmentManager
 			val transaction = fragmentManager.beginTransaction()
