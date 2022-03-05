@@ -46,6 +46,8 @@ class FaskesAdapter(private val oldFragment: Fragment) :
 				item.kode,
 				item.jenis_faskes,
 				item.alamat,
+				item.kota,
+				item.provinsi,
 				item.telp,
 				item.status,
 				item.latitude,

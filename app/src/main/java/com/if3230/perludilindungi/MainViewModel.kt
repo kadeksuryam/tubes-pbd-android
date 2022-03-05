@@ -28,6 +28,7 @@ class MainViewModel constructor(
 	val bookmarks = MutableLiveData<MutableList<BookmarkedFaskes>>()
 	val finishLoadingNews = MutableLiveData(false)
 	val isBookmarksLoaded = MutableLiveData(false)
+	val bookmarkByCode = MutableLiveData<BookmarkedFaskes?>(null)
 
 	fun doCheckIn(checkInRequest: CheckInRequest) {
 		val response = repository.doCheckIn(checkInRequest)
@@ -117,35 +118,33 @@ class MainViewModel constructor(
 		}
 	}
 
+	fun getBookmarkByCode(kode: String) {
+		viewModelScope.launch {
+			val bookmark = withContext(Dispatchers.IO) {
+				bookmarkedFaskesDao.getByKode(kode)
+			}
+
+			try {
+				bookmarkByCode.value = bookmark[0]
+			} catch (e: Exception) {
+				bookmarkByCode.value = null
+			}
+		}
+	}
+
 	fun bookmark(faskes: BookmarkedFaskes) {
 		viewModelScope.launch {
 			withContext(Dispatchers.IO) {
 				bookmarkedFaskesDao.insert(faskes)
 			}
-
-			if (!isBookmarksLoaded.value!!) {
-				getAllBookmarks()
-			}
-
-			val bm = bookmarks.value!!
-			bm.add(faskes)
-			bookmarks.value = bm
 		}
 	}
 
-	fun unbookmark(faskes: BookmarkedFaskes) {
+	fun unbookmark(id: Int) {
 		viewModelScope.launch {
 			withContext(Dispatchers.IO) {
-				bookmarkedFaskesDao.delete(faskes)
+				bookmarkedFaskesDao.delete(id)
 			}
-
-			if (!isBookmarksLoaded.value!!) {
-				getAllBookmarks()
-			}
-
-			val bm = bookmarks.value!!
-			bm.remove(faskes)
-			bookmarks.value = bm
 		}
 	}
 
