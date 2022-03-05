@@ -51,6 +51,7 @@ class NewsAdapter(private val oldFragment: Fragment) :
 			val transaction = fragmentManager.beginTransaction()
 			transaction.replace(oldFragment.id, newsWebView)
 			transaction.addToBackStack(oldFragment::class.java.toString())
+			transaction.setReorderingAllowed(true)
 			transaction.commit()
 		}
 	}

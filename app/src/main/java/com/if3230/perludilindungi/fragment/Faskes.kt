@@ -1,7 +1,6 @@
 package com.if3230.perludilindungi.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +22,7 @@ import com.if3230.perludilindungi.recycler_view.FaskesAdapter
 class Faskes : Fragment() {
 	private lateinit var binding: FragmentFaskesBinding
 	private lateinit var viewModel: MainViewModel
-	private val adapter = FaskesAdapter()
+	private val adapter = FaskesAdapter(this)
 	private lateinit var selectedProvince: String
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,9 +47,6 @@ class Faskes : Fragment() {
 			binding.citiesSelectionAutocomplete.setAdapter(citiesArrAdapter)
 		}
 		viewModel.faskes.observe(this) {
-			it.data.forEach { datum ->
-				Log.i("FaskesFragment", datum.jenis_faskes.toString())
-			}
 			adapter.faskesList = it.data.toMutableList()
 		}
 	}
